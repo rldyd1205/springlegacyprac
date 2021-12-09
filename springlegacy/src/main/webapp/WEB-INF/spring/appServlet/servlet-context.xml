@@ -21,6 +21,8 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- /WEB-INF/views/?????.jsp -->
+	
 	<context:component-scan base-package="com.example.controller" />
 	
 	
