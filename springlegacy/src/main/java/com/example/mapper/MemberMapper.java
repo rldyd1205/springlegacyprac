@@ -5,7 +5,7 @@ import com.example.domain.MemberVO;
 public interface MemberMapper {
 	
 	// =========== select ===========
-	MemberVO getMemberId(String id);
+	MemberVO getMemberById(String id);
 	
 	// =========== insert ===========
 	

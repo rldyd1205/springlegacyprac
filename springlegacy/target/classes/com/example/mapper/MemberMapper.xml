@@ -5,7 +5,7 @@
 <mapper namespace="com.example.mapper.MemberMapper">
 
 	<!-- =========== select =========== -->
-	<select id="getMemberId" resultType="memberVo">
+	<select id="getMemberById" resultType="memberVO">
 		<![CDATA[
 			SELECT *
 			FROM member

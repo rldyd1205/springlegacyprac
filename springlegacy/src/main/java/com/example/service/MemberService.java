@@ -11,14 +11,13 @@ import com.example.mapper.MemberMapper;
 public class MemberService {
 	
 	private MemberMapper memberMapper;
-	
+
 	public MemberService(MemberMapper memberMapper) {
 		super();
 		this.memberMapper = memberMapper;
 	}
-
-	public MemberVO getMemberById(String id) {
-		return memberMapper.getMemberId(id);
-	}
 	
+	public MemberVO getMemberById(String id) {
+		return memberMapper.getMemberById(id);
+	}
 }
