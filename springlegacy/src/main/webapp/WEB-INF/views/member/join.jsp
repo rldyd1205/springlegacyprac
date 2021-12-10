@@ -61,8 +61,6 @@
 							<input name="birthday" class="form-control" id="birthday"
 								   type="date" data-sb-validations="required" data-sb-can-submit="no">
 							<label for="birthday">생년월일</label>
-							<div class="invalid-feedback" data-sb-feedback="name:required">
-								birthday is required.</div>
 						</div>
 						<!-- gender input-->
 						<div class="form-floating mb-3">
