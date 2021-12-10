@@ -46,8 +46,8 @@
                             <!-- Submit Button-->
                             <button class="btn btn-primary btn-xl" 
                                     id="submitButton" type="submit">로그인</button>
-                            <button class="btn btn-primary btn-xl" 
-                                    type="button">회원가입</button>
+                            <button class="btn btn-primary btn-xl" type="button"
+                            		onclick="location.href='/member/join'">회원가입</button>
                         </form>
                     </div>
                 </div>
