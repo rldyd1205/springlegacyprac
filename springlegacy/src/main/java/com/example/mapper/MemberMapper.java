@@ -8,7 +8,7 @@ public interface MemberMapper {
 	MemberVO getMemberById(String id);
 	
 	// =========== insert ===========
-	
+	void insertMember(MemberVO memberVO);
 	// =========== update ===========
 	
 	// =========== delete ===========
