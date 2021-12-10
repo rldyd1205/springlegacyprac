@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
 	 id="mainNav">
 	<div class="container">
-		<a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+		<a class="navbar-brand" href="#page-top">거니씨 바보</a>
 		<button
 			class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
 			type="button" data-bs-toggle="collapse"

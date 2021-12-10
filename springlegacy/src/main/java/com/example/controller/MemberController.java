@@ -22,7 +22,7 @@ import com.example.util.JScript;
 @Controller
 @RequestMapping("/member/*")
 public class MemberController {
-
+	
 	private MemberService memberService;
 
 	public MemberController(MemberService memberService) {
@@ -61,7 +61,7 @@ public class MemberController {
 
 			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 		}
-
+		System.out.println("realHashPasswd : " + realHashPasswd);
 		// 3. 세션 등록
 		session.setAttribute("id", id);
 		// 로그인상태유지
@@ -105,7 +105,7 @@ public class MemberController {
 
 			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 		}
-
+		
 		// 2. 비밀번호 맞는지 체크
 		String passwd = memberVO.getPasswd();
 
@@ -116,16 +116,18 @@ public class MemberController {
 
 			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 		}
-
-		System.out.println("memberVO : " + memberVO);
-
+		
 		// 3. 회원가입 날짜
 		memberVO.setRegDate(new Date());
-
-
+		
+		// 4. 비밀번호 암호화
+		String hasPasswd = BCrypt.hashpw(passwd, BCrypt.gensalt());
+		memberVO.setPasswd(hasPasswd);
+		
 		// 5. DB에 회원정보 등록하기(가입하기)
+		System.out.println("memberVO : " + memberVO);
 		memberService.insertMember(memberVO);
-
+		
 		// 6. 회원가입 완료 메세지 + 로그인 페이지로 보내기
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "text/html; charset=UTF-8");
