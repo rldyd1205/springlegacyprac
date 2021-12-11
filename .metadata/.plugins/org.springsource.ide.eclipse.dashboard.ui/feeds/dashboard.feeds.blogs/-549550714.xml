@@ -5,7 +5,46 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-12-09T20:00:00Z</updated>
+  <updated>2021-12-10T20:00:00Z</updated>
+  <entry>
+    <title>Log4J2 Vulnerability and Spring Boot</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/12/10/log4j2-vulnerability-and-spring-boot" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2021-12-10:4639</id>
+    <updated>2021-12-10T20:00:00Z</updated>
+    <content type="html">&lt;p&gt;As you may have seen in the news, a new zero-day exploit has been reported against the popular Log4J2 library which can allow an attacker to remotely execute code. The vulnerability has been reported with &lt;a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228"&gt;CVE-2021-44228&lt;/a&gt; against the &lt;code&gt;log4j-core&lt;/code&gt; jar and has been fixed in &lt;a href="https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.15.0/"&gt;Log4J v2.15.0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Spring Boot users are only affected by this vulnerability if they have &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.logging.log4j"&gt;switched the default logging system to Log4J2&lt;/a&gt;. The &lt;code&gt;log4j-to-slf4j&lt;/code&gt; and &lt;code&gt;log4j-api&lt;/code&gt; jars that we include in &lt;code&gt;spring-boot-starter-logging&lt;/code&gt; cannot be exploited on their own. Only applications using &lt;code&gt;log4j-core&lt;/code&gt; and including user input in log messages are vulnerable.&lt;/p&gt;
+&lt;p&gt;Our upcoming v2.5.8 &amp;amp; v2.6.2 releases (due Dec 23, 2021) will pickup Log4J v2.15.0, but since this is such a serious vulnerability you may want to override our dependency management and upgrade your Log4J2 dependency sooner.&lt;/p&gt;&lt;h2&gt;&lt;a href="#maven" class="anchor" name="maven"&gt;&lt;/a&gt;Maven&lt;/h2&gt;
+&lt;p&gt;For Maven users, you can follow &lt;a href="https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#using"&gt;these instructions&lt;/a&gt; and the set the &lt;code&gt;log4j2.version&lt;/code&gt; property.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;properties&amp;gt;&#xD;
+    &amp;lt;log4j2.version&amp;gt;2.15.0&amp;lt;/log4j2.version&amp;gt;&#xD;
+&amp;lt;/properties&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To check that the override as been applied run &lt;code&gt;./mvnw dependency:list | grep log4j&lt;/code&gt; and check that the version is 2.15.0.&lt;/p&gt;&lt;h2&gt;&lt;a href="#gradle" class="anchor" name="gradle"&gt;&lt;/a&gt;Gradle&lt;/h2&gt;
+&lt;p&gt;For Gradle users, you can follow &lt;a href="https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#managing-dependencies.dependency-management-plugin.customizing"&gt;these instructions&lt;/a&gt; and update the version property, import the BOM or use a&lt;code&gt;resolutionStrategy&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For most users, setting the &lt;code&gt;log4j2.version&lt;/code&gt; property will be sufficient:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint gradle"&gt;ext[&amp;#39;log4j2.version&amp;#39;] = &amp;#39;2.15.0&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you&amp;rsquo;re using Gradle&amp;rsquo;s platform support instead of our dependency management plugin then you can add a dependency to the Log4J BOM:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint gradle"&gt;implementation(platform(&amp;quot;org.apache.logging.log4j:log4j-bom:2.15.0&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And if you can¡¯t use either of those methods then you can declare a &lt;code&gt;resolutionStrategy&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint gradle"&gt;configurations.all {&#xD;
+	resolutionStrategy.eachDependency { DependencyResolveDetails details -&amp;gt;&#xD;
+		if (details.requested.group == &amp;#39;org.apache.logging.log4j&amp;#39;) {&#xD;
+			details.useVersion &amp;#39;2.15.0&amp;#39;&#xD;
+		}&#xD;
+	}&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Whichever method you choose, to check that the override has been applied you can run &lt;code&gt;./gradlew dependencyInsight --dependency log4j-core&lt;/code&gt; and look for version 2.15.0.&lt;/p&gt;&lt;h2&gt;&lt;a href="#other-options" class="anchor" name="other-options"&gt;&lt;/a&gt;Other Options&lt;/h2&gt;
+&lt;p&gt;For users that can¡¯t upgrade, another option is to set the&lt;code&gt;log4j2.formatMsgNoLookups&lt;/code&gt; system property to &lt;code&gt;true&lt;/code&gt;. For example, you can start your app using &lt;code&gt;java -Dlog4j2.formatMsgNoLookups=true -jar myapp.jar&lt;/code&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Transformative leader, brilliant technologist, my friend, Patrick Chanezon</title>
     <link rel="alternate" href="https://spring.io/blog/2021/12/09/a-bootiful-podcast-transformative-leader-brilliant-technologist-my-friend-patrick-chanezon" />
@@ -1577,56 +1616,6 @@ We have seen that, by moving from an &lt;em&gt;embedded&lt;/em&gt; approach to &
   &lt;li&gt;Speaking of &lt;em&gt;Spring Tips&lt;/em&gt;, it&amp;rsquo;s Thanksgiving here in the US, so I won&amp;rsquo;t be producing an episode this week. C&amp;rsquo;ya next week!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Happy Thanksgiving! And &lt;em&gt;thank you&lt;/em&gt;! &lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring HATEOAS 1.4 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/11/22/spring-hateoas-1-4-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Oliver Drotbohm</name>
-    </author>
-    <id>tag:spring.io,2021-11-22:4619</id>
-    <updated>2021-11-22T21:00:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;I am excited to announce that Spring HATEOAS 1.4 GA has been part of the cascade of releases that lead to the Spring Boot 2.6 last week.
-The release ships a couple of new features and all bug fixes we have incorporated in the 1.3.x line.
-The most notable new features are:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Full support for level 4 URI templates&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support for non-composite request parameter rendering&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Improved HAL-FORMS support (additional property constraints, custom media types)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Additional HTML input types (checkbox, radio, file)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;General dependency upgrades, including Spring Framework 5.3.13 and Jackson 2.13.9.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Find more detailed information about all changes made in the 1.4 line in the release&amp;#8217;s &lt;a href="https://docs.spring.io/spring-hateoas/docs/1.4.0/changelog.txt"&gt;change log&lt;/a&gt;.
-The release was included in the Spring Boot 2.6 release &lt;a href="https://spring.io/blog/2021/11/19/spring-boot-2-6-is-now-available"&gt;announced last week&lt;/a&gt;.
-In other words, if you have upgraded to that, you&amp;#8217;ve already successfully upgraded to Spring HATEOAS 1.4.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;We have also released maintenance versions for the &lt;a href="https://github.com/spring-projects/spring-hateoas/releases/tag/1.3.6"&gt;1.3&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-hateoas/releases/tag/1.2.11"&gt;1.2&lt;/a&gt; lines.
-Please note, that &lt;a href="https://github.com/spring-projects/spring-hateoas/releases/tag/1.2.11"&gt;1.2.11&lt;/a&gt; is the last release of that branch and 1.2 is going out of OSS maintenance.
-Find more about the support timelines for each branch in the &lt;a href="https://spring.io/projects/spring-hateoas#support"&gt;newly introduced tab&lt;/a&gt; of our project homepage.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Also note, that due to a typo during the release procedure for 1.2.11, a 1.12.11 release has made it onto Maven Central.
-The binaries are logically equivalent to 1.2.11, but their presence is likely to cause trouble with tools automating library upgrades.
-We&amp;#8217;re currently working with Sonatype to investigate options to potentially remove the invalid artifacts.&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
