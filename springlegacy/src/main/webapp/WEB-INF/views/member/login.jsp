@@ -43,7 +43,9 @@
                                 data-sb-validations="required,email" />
                                 <label for="passwd">비밀번호</label>
                             </div>
-                            <input type="checkbox" name="rememberMe"/>로그인 유지
+                            <div class="form-floating mb-3">
+                                <input type="checkbox" name="rememberMe" /><span>로그인 유지</span>
+                            </div>
                             <!-- Submit Button-->
                             <button class="btn btn-primary btn-xl" 
                                     id="submitButton" type="submit">로그인</button>

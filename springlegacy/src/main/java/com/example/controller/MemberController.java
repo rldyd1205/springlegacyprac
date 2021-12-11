@@ -38,7 +38,9 @@ public class MemberController {
 
 	@PostMapping("/login")
 	public ResponseEntity<String> login(String id, String passwd, 
-			HttpSession session, boolean rememberMe, HttpServletResponse response) {
+			boolean rememberMe, 
+			HttpSession session, 
+			HttpServletResponse response) {
 		// 1. 아이디 존재 여부 체크
 		MemberVO dbMemberVO = memberService.getMemberById(id);
 
@@ -53,7 +55,7 @@ public class MemberController {
 		String realHashPasswd = dbMemberVO.getPasswd();
 
 		Boolean isRightPasswd = BCrypt.checkpw(passwd, realHashPasswd);
-		if (isRightPasswd == false) {
+		if (isRightPasswd == false) { // 비밀번호가 다름
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "text/html; charset=UTF-8");
 
