@@ -3,6 +3,7 @@ package com.example.controller;
 import java.util.Date;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +12,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -138,4 +140,53 @@ public class MemberController {
 		return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 	}
 
+	//세션 쿠키 지우기(제거/삭제)
+	@GetMapping("/logout")
+	public String logout(HttpSession session,
+			HttpServletRequest request, HttpServletResponse response) {
+		// 세션 비우기
+		session.invalidate();
+		
+		// 쿠키 지우기 -> 쿠키가 배열인 이유는 여러개의 쿠키가 있다.
+		Cookie[] cookies = request.getCookies();
+		// 쿠키가 빈값이 아닐때 if문 실행
+		if (cookies != null) {
+			// 반복문 forech사용(쿠키 하나씩 꺼내서 조건문을 통해 체크해봄)
+			for (Cookie cookie : cookies) {
+				// 쿠키 이름이 UserId(쿠키 봉다리)인 것만 꺼낼거임
+				if (cookie.getName().equals("UserId")) {
+					// 쿠키 수명 0으로 만들기
+					cookie.setMaxAge(0);
+					// 쿠키 경로 설정 "/" 모든경로로
+					cookie.setPath("/");
+					// 쿠키 실어서 보내기(사용자에게 응답해주기)
+					response.addCookie(cookie);
+				}
+			}
+		}
+		// member폴더 안에 있는 index.jsp(메인 페이지)로 보내기
+		return "index";
+	}
+	
+	/*/내정보에서 id를 받아와야 하는데 세션에 
+	 * 아이디가 등록되어 있으니까 session받아 오기.
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
+	@GetMapping("/myInfo")
+	public String myInfo(HttpSession session, Model model) {
+		// 세션에 저장되어 있는 id 받아서 String id 변수에 저장
+		String id = (String) session.getAttribute("id");
+		// memberService에 저장되어 있는 id를 가져와서
+		// memberVO에 넣어주기 
+		MemberVO memberVO = memberService.getMemberById(id);
+		// 프론트로 던져 줄때 필요한게 모델 (세션과 비슷함)
+		// member라는 이름으로 객체를 프론트에 던져줌
+		// 즉 검색해서 나온 결과(memberVO)를 사용할 수 있음
+		model.addAttribute("member", memberVO);
+		// 내정보 페이지로 이동
+		return "member/myInfo";
+	}
 }
