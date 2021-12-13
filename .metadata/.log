@@ -4491,3 +4491,9 @@ Caused by: java.net.SocketException: Connection reset
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 16:25:23.954
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 16:28:36.063
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 16:28:36.066
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
