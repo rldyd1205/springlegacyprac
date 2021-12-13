@@ -4419,3 +4419,75 @@ Caused by: java.net.SocketException: Connection reset
 
 !ENTRY org.eclipse.jst.server.tomcat.core 4 0 2021-12-12 20:41:45.795
 !MESSAGE Several ports (8005, 8090) required by Tomcat v9.0 Server at localhost are already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 00:48:27.054
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 00:48:27.059
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 00:52:08.162
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 00:52:08.169
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:23:51.848
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.jYneIQAI
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:23:51.849
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.jYneIQAI
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:23:51.849
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:23:51.849
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.jYneIQAI => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:08.851
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:08.852
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@719eb650[org.springframework.tooling.boot.ls:1.29.0.202110250907(id=556)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:08.852
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.582
+!MESSAGE Boot LS startup time from start to initialized: 1729ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.658
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.HVspAajhisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.659
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.659
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.659
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.660
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.660
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.HVspAajh => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.663
+!MESSAGE classpath=36 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.665
+!MESSAGE buffering callback sts4.classpath.HVspAajh springlegacy false 36
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.666
+!MESSAGE executing callback sts4.classpath.HVspAajh 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-12-13 16:24:10.909
+!MESSAGE executing callback sts4.classpath.HVspAajh SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 16:25:23.952
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-12-13 16:25:23.954
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
