@@ -21,7 +21,23 @@
 							#{email}, #{recvEmail}, #{regDate})
 		]]>
 	</insert>
-	<!-- =========== update =========== -->
 	
+	<!-- =========== update =========== -->
+	<update id="modifyMember">
+		<![CDATA[
+			UPDATE member
+			SET name = #{name}, birthday = #{birthday}, gender = #{gender},
+				email = #{email}, recv_email = #{recvEmail}
+			WHERE id = #{id}	
+		]]>
+	</update>
+	
+	<update id="modifyPasswd">
+		<![CDATA[
+			UPDATE member
+			SET passwd=#{newPasswd}
+			WHERE id =#{id}
+		]]>
+	</update>
 	<!-- =========== delete =========== -->
 </mapper>

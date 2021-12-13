@@ -29,4 +29,12 @@ public class MemberService {
 	public void insertMember(MemberVO memberVO) {
 		memberMapper.insertMember(memberVO);
 	}
+	// MemberMapper.xml에서 내용 만들고 여기서 서비스 작성
+	public void modifyMember(MemberVO memberVO) {
+		memberMapper.modifyMember(memberVO);
+	}
+	
+	public void modifyPasswd(String id, String newPasswd) {
+		memberMapper.modifyPasswd(id, newPasswd);
+	}
 }
