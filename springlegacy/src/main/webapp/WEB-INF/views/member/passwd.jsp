@@ -50,9 +50,9 @@
 								for="newPasswd">새 비밀번호</label>
 						</div>
 						<div class="form-floating mb-3">
-							<input class="form-control" id="newpasswdConfirm" type="password"
-								name="newpasswdConfirm" data-sb-validations="required" /> <label
-								for="newpasswdConfirm">새 비밀번호 확인</label>
+							<input class="form-control" id="newPasswdConfirm" type="password"
+								name="newPasswdConfirm" data-sb-validations="required" /> <label
+								for="newPasswdConfirm">새 비밀번호 확인</label>
 						</div>
 						
 						<button class="btn btn-primary btn-xl" id="submitButton"

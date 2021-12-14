@@ -3012,3 +3012,46 @@
 2021-12-14 01:25:52,983 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
 2021-12-14 01:25:52,985 [Worker-4: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
 2021-12-14 01:25:52,987 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-14 15:33:13,455 [Worker-256: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:33:13,458 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2021-12-14 15:33:13,461 [Worker-256: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:33:13,466 [Worker-256: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-14 15:34:45,513 [Worker-252: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:34:45,516 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2021-12-14 15:34:45,518 [Worker-252: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:34:45,519 [Worker-252: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-14 15:34:47,574 [Worker-257: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:34:47,576 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2021-12-14 15:34:47,578 [Worker-257: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:34:47,579 [Worker-257: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-14 15:37:59,270 [Worker-260: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:37:59,273 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2021-12-14 15:37:59,274 [Worker-260: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:37:59,275 [Worker-260: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-14 15:40:06,417 [Worker-259: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:40:06,418 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-14 15:40:06,419 [Worker-259: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:40:06,420 [Worker-259: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-12-14 15:40:23,181 [Worker-259: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2021-12-14 15:40:25,943 [Worker-259: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.example:myapp:1.0.0-BUILD-SNAPSHOT @ C:\Users\ME\Desktop\springlegacyprac\springlegacy\pom.xml.
+2021-12-14 15:40:27,849 [Worker-259: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springlegacy/src/main/java
+2021-12-14 15:40:27,849 [Worker-259: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springlegacy/src/main/resources
+2021-12-14 15:40:27,850 [Worker-259: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /springlegacy/src/test/java
+2021-12-14 15:40:27,850 [Worker-259: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /springlegacy/src/test/resources
+2021-12-14 15:40:28,166 [Worker-259: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for springlegacy
+2021-12-14 15:40:28,171 [Worker-259: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 4 sec
+2021-12-14 15:40:29,007 [Worker-258: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:40:29,008 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2021-12-14 15:40:29,022 [Worker-258: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:40:29,023 [Worker-258: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-14 15:40:29,030 [Worker-258: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of springlegacy
+2021-12-14 15:40:29,030 [Worker-258: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for springlegacy
+2021-12-14 15:40:29,034 [Worker-258: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:40:34,472 [Worker-258: Cleaning all projects] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for springlegacy
+2021-12-14 15:40:34,655 [Worker-262: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:40:34,656 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2021-12-14 15:40:34,663 [Worker-262: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-12-14 15:40:34,664 [Worker-262: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-12-14 15:40:34,667 [Worker-262: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of springlegacy
+2021-12-14 15:40:34,667 [Worker-262: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for springlegacy
+2021-12-14 15:40:34,670 [Worker-262: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
