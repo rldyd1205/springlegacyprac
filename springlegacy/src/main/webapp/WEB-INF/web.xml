@@ -2,7 +2,7 @@
 <web-app version="4.0" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee; https://java.sun.com/xml/ns/javaee/web-app_4_0.xsd">
-<!-- 서버를 시작할때 제일먼저 작동하는곳 -->
+	<!-- 서버를 시작할때 제일먼저 작동하는곳 -->
 	<!-- The definition of the Root Spring Container shared by all Servlets 
 		and Filters -->
 	<context-param>

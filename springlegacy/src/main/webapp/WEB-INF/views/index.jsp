@@ -9,7 +9,6 @@
     <body id="page-top">
         <!-- Navigation-->
         <jsp:include page="/WEB-INF/views/include/nav-bar.jsp"/>
-        
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
