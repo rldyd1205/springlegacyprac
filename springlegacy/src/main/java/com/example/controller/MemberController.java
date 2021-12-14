@@ -279,4 +279,38 @@ public class MemberController {
 		return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 	}
 	
+	// 회원 탈퇴 페이지
+	@GetMapping("/remove")
+	public String removeForm() {
+		
+		return "member/memberRemove";
+	}
+	
+	@PostMapping("/remove")
+	public ResponseEntity<String> removrForm(String passwd, HttpSession session) {
+		//1. 비밀번호 체크
+		String id = (String) session.getAttribute("id");
+		MemberVO dbMemberVO = memberService.getMemberById(id);
+		
+		boolean isPasswdRight = BCrypt.checkpw(passwd, dbMemberVO.getPasswd());
+		
+		if (isPasswdRight == false) { //현재 비밀번호가 맞지 않음
+			HttpHeaders headers = new HttpHeaders();
+			headers.add("Content-Type", "text/html; charset=UTF-8");
+			String str = JScript.back("비밀번호가 틀렸습니다.");
+
+			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
+		}
+		//2. DB에서 해당 아이디 정보 삭제
+		memberService.deleteMemberById(id);
+		
+		//3. 로그아웃 처리(세션, 쿠키 삭제)
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type", "text/html; charset=UTF-8");
+		//비밀번호를 변경하고 로그아웃 시키는 곳으로 이동
+		// -> 그러면 세션도 삭제하고 쿠키 수명도 없애고 난 이후에 메인페이지인 index로 이동
+		String str = JScript.href("회원탈퇴 완료", "/member/logout");
+
+		return new ResponseEntity<String>(str, headers, HttpStatus.OK);
+	}
 }
