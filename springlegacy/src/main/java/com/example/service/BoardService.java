@@ -29,4 +29,7 @@ public class BoardService {
 		return boardMapper.getBoardByNum(num);
 	}
 	
+	public void addViewCount(int num) {
+		boardMapper.addViewCount(num);
+	}
 }

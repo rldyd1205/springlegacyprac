@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +30,10 @@
 #row3{
 	padding: 20px;
 	font-size: 25px;
+	height: 450px;
+}
+#regDate {
+	font-size: 20px;
 }
 </style>
 </head>
@@ -53,30 +58,30 @@
 			</div>
 			<div >
 				<button type="button" class="btn btn-primary"
-				onclick="location.href='/board/list'">게시글 목록으로 돌아가기</button>
+				onclick="location.href='/board/list?pageNum=${ pageNum }'">게시글 목록으로 돌아가기</button>
 			</div>
 			
 			<!-- Contact Section Form-->
 			<div class="row justify-content-center" id="content-box">
 				<div class="row rows" id="row1">
 					<div id="boardNum" class="col-lg-9">
-						<span>1</span>&nbsp;&nbsp;&nbsp;
-						<span>제목</span>
+						<span>${ board.num }</span>&nbsp;&nbsp;&nbsp;
+						<span>${ board.subject }</span>
 					</div>
 					<div id="regDate" class="col-lg-3">
-						<span>등록날짜</span>
+						<span>등록날짜 <fmt:formatDate value="${ board.regDate }" pattern="yyyy.MM.dd HH:mm"/></span>
 					</div>
 				</div>
 				<div class="row rows" id="row2">
 					<div id="memberId" class="col-lg-10">
-						<span>작성자</span>
+						<span>작성자 ${ board.memberId }</span>
 					</div>
 					<div id="viewCount" class="col-lg-2">
-						<span>조회수 1</span>
+						<span>조회수 ${ board.viewCount }</span>
 					</div>
 				</div>	
 				<div class="row rows" id="row3">
-					내용
+					${ board.content }
 				</div>
 			</div>
 		</div>

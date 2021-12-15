@@ -11,7 +11,12 @@ public interface BoardMapper {
 	
 	// =========== insert ===========
 	void writeBoard(BoardVO boardVO);
+	
+	
 	// =========== update ===========
+	
+	// 조회수를 +1 해주는 거 만드는거
+	void addViewCount(int num);
 	
 	// =========== delete ===========
 	

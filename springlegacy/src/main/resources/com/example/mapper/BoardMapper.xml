@@ -29,8 +29,15 @@
 			WHERE num = #{num}
 		]]>
 	</select>
-	<!-- =========== update =========== -->
 	
+	<!-- =========== update =========== -->
+	<update id="addViewCount">
+		<![CDATA[
+			UPDATE board
+			SET view_count = view_count + 1
+			WHERE num = #{num}
+		]]>
+	</update>
 	
 	
 	<!-- =========== delete =========== -->
