@@ -70,7 +70,7 @@
     <updated>2021-12-14T16:04:00Z</updated>
     <content type="html">&lt;p&gt;The Spring GraphQL team has just released the 4th milestone towards a 1.0.0 release. Thanks to all contributors!&lt;/p&gt;
 &lt;p&gt;In this milestone, we have further improved the annotation programming model and extended the Spring Data support that were provided &lt;a href="https://spring.io/blog/2021/10/28/spring-graphql-1-0-0-m3-released"&gt;in the previous milestones&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#interface-projections-for-graphql-arguments" class="anchor" name="interface-projections-for-graphql-arguments"&gt;&lt;/a&gt;Interface Projections for GraphQL Arguments&lt;/h2&gt;
-&lt;p&gt;If you&amp;rsquo;re familiar with Spring Data&amp;rsquo;s &lt;a href="https://docs.spring.io/spring-data/commons/docs/current/reference/html/#projections.interfaces"&gt;Interface-based Projections&lt;/a&gt;, then this new feature will make perfect can sense: you can use a well-defined interface to work with GraphQL arguments, without the need for any Object implementation. &lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re familiar with Spring Data&amp;rsquo;s &lt;a href="https://docs.spring.io/spring-data/commons/docs/current/reference/html/#projections.interfaces"&gt;Interface-based Projections&lt;/a&gt;, then this new feature will make perfect sense: you can use a well-defined interface to work with GraphQL arguments, without the need for any Object implementation. &lt;/p&gt;
 &lt;p&gt;For example:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint java"&gt;@Controller&#xD;
 public class BookController {&#xD;
@@ -90,10 +90,10 @@ interface BookInputProjection {&#xD;
     String getAuthorAndName();&#xD;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can learn more about this in the &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/#controllers-schema-mapping-projectedpayload-argument"&gt;@ProjectedPayload Interface&lt;/a&gt; section of the docs.&lt;/p&gt;&lt;h2&gt;&lt;a href="#query-by-example-support" class="anchor" name="query-by-example-support"&gt;&lt;/a&gt;Query By Example Support&lt;/h2&gt;
-&lt;p&gt;Spring GraphQL now supports use of the Query by Example, Spring Data extension for data fetching. To use this extension, you don&amp;rsquo;t need to write queries through store-specific query languages, but simply provide an example of a domain object with populated fields, the repository implementation will do the rest!&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;QueryByExampleDataFetcher&lt;/code&gt; makes it easy to create a &lt;code&gt;DataFetcher&lt;/code&gt; that binds GraphQL arguments onto an example object and then uses that to query for the data. There is also a feature for automated discovery of Query By Example repositories, based on the &lt;code&gt;@GraphQlRepository&lt;/code&gt; annotation, and their mapping to top-level GraphQL queries.&lt;/p&gt;
-&lt;p&gt;If your data store of choice supports it, this &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/#data-querybyexample"&gt;adds another way to leverage your Spring Data repositories in a Spring GraphQL application&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#standard-bean-validation-for-graphql-arguments" class="anchor" name="standard-bean-validation-for-graphql-arguments"&gt;&lt;/a&gt;Standard Bean Validation for GraphQL Arguments&lt;/h2&gt;
+&lt;p&gt;You can learn more about this in the &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/#controllers-schema-mapping-projectedpayload-argument"&gt;@ProjectedPayload Interface&lt;/a&gt; section of the documentation.&lt;/p&gt;&lt;h2&gt;&lt;a href="#query-by-example-support" class="anchor" name="query-by-example-support"&gt;&lt;/a&gt;Query By Example Support&lt;/h2&gt;
+&lt;p&gt;Spring GraphQL now supports use of the Query by Example, Spring Data, extension for data fetching. To use this extension, you don&amp;rsquo;t need to write queries through store-specific query languages, but simply provide an example of a domain object with populated fields. The repository implementation will do the rest!&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;QueryByExampleDataFetcher&lt;/code&gt; makes it easy to create a &lt;code&gt;DataFetcher&lt;/code&gt; that binds GraphQL arguments onto an example object and then uses that to query for the data. There is also a feature for automated discovery of Query By Example repositories, based on the &lt;code&gt;@GraphQlRepository&lt;/code&gt; annotation, and mapping to top-level GraphQL queries.&lt;/p&gt;
+&lt;p&gt;If your data store of choice supports it, this adds another way to leverage your Spring Data repositories in a Spring GraphQL application. See &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/#data-querybyexample"&gt;the documentation&lt;/a&gt; for more details.&lt;/p&gt;&lt;h2&gt;&lt;a href="#standard-bean-validation-for-graphql-arguments" class="anchor" name="standard-bean-validation-for-graphql-arguments"&gt;&lt;/a&gt;Standard Bean Validation for GraphQL Arguments&lt;/h2&gt;
 &lt;p&gt;On top of the existing constraints enforced at the schema level, you can now use Standard Bean Validation to validate GraphQL arguments that are declared as controller method parameters. If the argument doesn&amp;rsquo;t match the defined constraints, a validation exception is thrown and written to the relevant &amp;ldquo;errors&amp;rdquo; section of the GraphQL response. &lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint java"&gt;@Controller&#xD;
 public class BookController {&#xD;
@@ -133,49 +133,49 @@ public class BookInput {&#xD;
     <id>tag:spring.io,2021-12-10:4639</id>
     <updated>2021-12-10T20:00:00Z</updated>
     <content type="html">&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Since this blog post has been published, a &lt;a href="https://logback.qos.ch/news.html"&gt;new logback 1.2.8 version has been published&lt;/a&gt;. While this fixes a security issue, prerequisites for exploits are very different as they &amp;ldquo;requires write access to logback&amp;rsquo;s configuration file&amp;rdquo;. Our upcoming releases will pick up this new version.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Updates&lt;/strong&gt;: Since this blog post has been published, a &lt;a href="https://logback.qos.ch/news.html"&gt;new logback 1.2.8 version has been published&lt;/a&gt;. While this fixes a security issue, prerequisites for exploits are very different as they &amp;ldquo;requires write access to logback&amp;rsquo;s configuration file&amp;rdquo;.&lt;br/&gt;Log4J also released a new 2.16.0 version with fixes for &lt;a href="https://nvd.nist.gov/vuln/detail/CVE-2021-45046"&gt;CVE-2021-45046&lt;/a&gt;.&lt;br/&gt;Our upcoming releases will pick up these new versions.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;As you may have seen in the news, a new zero-day exploit has been reported against the popular Log4J2 library which can allow an attacker to remotely execute code. The vulnerability has been reported with &lt;a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228"&gt;CVE-2021-44228&lt;/a&gt; against the &lt;code&gt;log4j-core&lt;/code&gt; jar and has been fixed in &lt;a href="https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.15.0/"&gt;Log4J v2.15.0&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Spring Boot users are only affected by this vulnerability if they have &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.logging.log4j"&gt;switched the default logging system to Log4J2&lt;/a&gt;. The &lt;code&gt;log4j-to-slf4j&lt;/code&gt; and &lt;code&gt;log4j-api&lt;/code&gt; jars that we include in &lt;code&gt;spring-boot-starter-logging&lt;/code&gt; cannot be exploited on their own. Only applications using &lt;code&gt;log4j-core&lt;/code&gt; and including user input in log messages are vulnerable.&lt;/p&gt;
-&lt;p&gt;Our upcoming v2.5.8 &amp;amp; v2.6.2 releases (due Dec 23, 2021) will pick up Log4J v2.15.0, but since this is such a serious vulnerability you may want to override our dependency management and upgrade your Log4J2 dependency sooner.&lt;/p&gt;&lt;h2&gt;&lt;a href="#maven" class="anchor" name="maven"&gt;&lt;/a&gt;Maven&lt;/h2&gt;
+&lt;p&gt;Our upcoming v2.5.8 &amp;amp; v2.6.2 releases (due Dec 23, 2021) will pick up Log4J v2.16.0, but since this is such a serious vulnerability you may want to override our dependency management and upgrade your Log4J2 dependency sooner.&lt;/p&gt;&lt;h2&gt;&lt;a href="#maven" class="anchor" name="maven"&gt;&lt;/a&gt;Maven&lt;/h2&gt;
 &lt;p&gt;For Maven users, you can follow &lt;a href="https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#using"&gt;these instructions&lt;/a&gt; and the set the &lt;code&gt;log4j2.version&lt;/code&gt; property.&lt;/p&gt;
 &lt;p&gt;For example, if you are using our parent POM you can set the &lt;code&gt;log4j2.version&lt;/code&gt; property:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;properties&amp;gt;&#xD;
-    &amp;lt;log4j2.version&amp;gt;2.15.0&amp;lt;/log4j2.version&amp;gt;&#xD;
+    &amp;lt;log4j2.version&amp;gt;2.16.0&amp;lt;/log4j2.version&amp;gt;&#xD;
 &amp;lt;/properties&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you are not using our parent, but instead are importing the &lt;code&gt;spring-boot-dependencies&lt;/code&gt; BOM, you&amp;rsquo;ll need to use a &lt;code&gt;&amp;lt;dependencyManagement&amp;gt;&lt;/code&gt; section:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
     &amp;lt;dependencies&amp;gt;&#xD;
-        ... other dependencies including spring-boot-dependencies&#xD;
         &amp;lt;dependency&amp;gt;&#xD;
             &amp;lt;groupId&amp;gt;org.apache.logging.log4j&amp;lt;/groupId&amp;gt;&#xD;
             &amp;lt;artifactId&amp;gt;log4j-bom&amp;lt;/artifactId&amp;gt;&#xD;
-            &amp;lt;version&amp;gt;2.15.0&amp;lt;/version&amp;gt;&#xD;
-           &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;2.16.0&amp;lt;/version&amp;gt;&#xD;
+            &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+            &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
         &amp;lt;/dependency&amp;gt;&#xD;
+        ... other dependencies including spring-boot-dependencies&#xD;
     &amp;lt;/dependencies&amp;gt;&#xD;
 &amp;lt;/dependencyManagement&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To check that the override as been applied run &lt;code&gt;./mvnw dependency:list | grep log4j&lt;/code&gt; and check that the version is 2.15.0.&lt;/p&gt;&lt;h2&gt;&lt;a href="#gradle" class="anchor" name="gradle"&gt;&lt;/a&gt;Gradle&lt;/h2&gt;
+&lt;p&gt;To check that the override as been applied run &lt;code&gt;./mvnw dependency:list | grep log4j&lt;/code&gt; and check that the version is 2.16.0.&lt;/p&gt;&lt;h2&gt;&lt;a href="#gradle" class="anchor" name="gradle"&gt;&lt;/a&gt;Gradle&lt;/h2&gt;
 &lt;p&gt;For Gradle users, you can follow &lt;a href="https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#managing-dependencies.dependency-management-plugin.customizing"&gt;these instructions&lt;/a&gt; and update the version property, import the BOM or use a&lt;code&gt;resolutionStrategy&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;For most users, setting the &lt;code&gt;log4j2.version&lt;/code&gt; property will be sufficient:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint gradle"&gt;ext[&amp;#39;log4j2.version&amp;#39;] = &amp;#39;2.15.0&amp;#39;
+&lt;pre&gt;&lt;code class="prettyprint gradle"&gt;ext[&amp;#39;log4j2.version&amp;#39;] = &amp;#39;2.16.0&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you&amp;rsquo;re using Gradle&amp;rsquo;s platform support instead of our dependency management plugin then you can add a dependency to the Log4J BOM:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint gradle"&gt;implementation(platform(&amp;quot;org.apache.logging.log4j:log4j-bom:2.15.0&amp;quot;))
+&lt;pre&gt;&lt;code class="prettyprint gradle"&gt;implementation(platform(&amp;quot;org.apache.logging.log4j:log4j-bom:2.16.0&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And if you can¡¯t use either of those methods then you can declare a &lt;code&gt;resolutionStrategy&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint gradle"&gt;configurations.all {&#xD;
 	resolutionStrategy.eachDependency { DependencyResolveDetails details -&amp;gt;&#xD;
 		if (details.requested.group == &amp;#39;org.apache.logging.log4j&amp;#39;) {&#xD;
-			details.useVersion &amp;#39;2.15.0&amp;#39;&#xD;
+			details.useVersion &amp;#39;2.16.0&amp;#39;&#xD;
 		}&#xD;
 	}&#xD;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Whichever method you choose, to check that the override has been applied you can run &lt;code&gt;./gradlew dependencyInsight --dependency log4j-core&lt;/code&gt; and look for version 2.15.0.&lt;/p&gt;&lt;h2&gt;&lt;a href="#other-options" class="anchor" name="other-options"&gt;&lt;/a&gt;Other Options&lt;/h2&gt;
-&lt;p&gt;For users that can¡¯t upgrade, another option is to set the&lt;code&gt;log4j2.formatMsgNoLookups&lt;/code&gt; system property to &lt;code&gt;true&lt;/code&gt;. For example, you can start your app using &lt;code&gt;java -Dlog4j2.formatMsgNoLookups=true -jar myapp.jar&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Whichever method you choose, to check that the override has been applied you can run &lt;code&gt;./gradlew dependencyInsight --dependency log4j-core&lt;/code&gt; and look for version 2.16.0.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>

@@ -3,7 +3,7 @@ package com.example.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.domain.BoradVO;
+import com.example.domain.BoardVO;
 import com.example.mapper.BoardMapper;
 
 @Service
@@ -21,7 +21,12 @@ public class BoardService {
 		return boardMapper.getNextNum();
 	}
 	
-	public void writeBoard(BoradVO boardVo) {
+	public void writeBoard(BoardVO boardVo) {
 		boardMapper.writeBoard(boardVo);
 	}
+	
+	public BoardVO getBoardByNum(int num) {
+		return boardMapper.getBoardByNum(num);
+	}
+	
 }

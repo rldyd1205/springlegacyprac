@@ -22,7 +22,13 @@
 		]]>
 	</insert>
 	
-	
+	<select id="getBoardByNum" resultType="BoardVO">
+		<![CDATA[
+			SELECT *
+			FROM board
+			WHERE num = #{num}
+		]]>
+	</select>
 	<!-- =========== update =========== -->
 	
 	

@@ -1,13 +1,16 @@
 package com.example.mapper;
 
-import com.example.domain.BoradVO;
+import com.example.domain.BoardVO;
 
 public interface BoardMapper {
 
 	// =========== select ===========
 	int getNextNum();
+	
+	BoardVO getBoardByNum(int num);
+	
 	// =========== insert ===========
-	void writeBoard(BoradVO boardVO);
+	void writeBoard(BoardVO boardVO);
 	// =========== update ===========
 	
 	// =========== delete ===========

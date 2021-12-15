@@ -5,7 +5,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class BoradVO {
+public class BoardVO {
 	private int 	num;		// 게시글 번호
 	private String 	memberId;	// 글쓴이
 	private String 	subject;	// 제목

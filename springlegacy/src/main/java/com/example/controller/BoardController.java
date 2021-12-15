@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.domain.BoradVO;
+import com.example.domain.BoardVO;
 import com.example.service.BoardService;
 
 @Controller
@@ -22,21 +24,26 @@ public class BoardController {
 		super();
 		this.boardService = boardService;
 	}
-
+	
+	// 게시글 목록 페이지 가져오기
 	@GetMapping("/list")
 	public String boardList() {
 		return "board/boardList";
 	}
 	
+	// 새글 쓰기 페이지 가져오기
 	@GetMapping("/write")
 	public String writeForm() {
 		
 		return "board/writeBoard";
 	}
 	
+	// 새글 쓰기 버튼 눌렀을 때 기능 구현
+	// 기능 다 작동하고 나서 return으로 board/boardContent페이지 창 띠어주기
+	// board/boardContent -> 게시글 상세보기
 	@PostMapping("write")
-	public String write(BoradVO boardVO,
-			HttpSession session) {
+	public String write(BoardVO boardVO,
+			HttpSession session, RedirectAttributes rttr) {
 		System.out.println("수정 전 BoardVO : " + boardVO);
 		
 		// 1. 새 글 번호 추가
@@ -63,6 +70,34 @@ public class BoardController {
 		
 		// DB에 등록하기
 		boardService.writeBoard(boardVO);
-		return "";
+		
+		// 글 번호로 다음 페이지 다음 요청으로 이동 
+		// 리다이렉트로 글 번호 전달하기
+		rttr.addAttribute("num", boardVO.getNum());
+		// 게시글 목록으로 돌아갈 때 게시글 리스트가 있으면 거기서
+		// 예를 들어 5페이지를 눌러서 상세보기들어왔다가
+		// 목록으로 돌아갈때 다시 5페이지로 돌아가야 해서 필요하다
+		rttr.addAttribute("pageNum", 1);
+		
+		// board/writeBoard.jsp -> board/boardContent.jsp 이동
+		return "redirect:/board/content";
+	}
+	
+	// 게시글 상세보기페이지 가져오기
+	@GetMapping("/content")
+	public String boardContent(int num,
+			//pageNum은 필수로 요구되는 사항이 아니고, 까먹고 pageNum을 안보내줬으면
+			// 기본값 1로 설정해서 보내준다
+			@RequestParam(required = false, defaultValue = "1") String pageNum) {
+		
+		// num, pageNum 값 잘 가져왔는지 체크
+		System.out.println("num : " + num);
+		System.out.println("pasgeNum : " + pageNum);
+		
+		// num에 해당하는 글 정보 DB에서 가져오기
+		BoardVO boardVO = boardService.getBoardByNum(num);
+		System.out.println("boardVO : " + boardVO);
+		
+		return "board/boardContent";
 	}
 }
