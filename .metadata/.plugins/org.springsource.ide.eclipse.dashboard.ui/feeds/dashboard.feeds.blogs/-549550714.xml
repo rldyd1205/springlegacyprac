@@ -5,7 +5,124 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-12-10T20:00:00Z</updated>
+  <updated>2021-12-14T19:00:00Z</updated>
+  <entry>
+    <title>This Week in Spring - December 14th, 2021</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/12/14/this-week-in-spring-december-14th-2021" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-12-14:4642</id>
+    <updated>2021-12-14T19:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! How are you? Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I&amp;rsquo;m doing alright! It&amp;rsquo;s noon as I write this, and I&amp;rsquo;ve got GSUG joint presentation with &lt;a href="https://twitter.com/mraible"&gt;Matt Raible&lt;/a&gt; later today. Then, tonight at midnight my time to 5 am or 6 am, I&amp;rsquo;m kicking off a two-day workshop for GOTO! I look forward to seeing ya there! Anyway, we&amp;rsquo;ve got a lot to cover so let&amp;rsquo;s dive into it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Read this first! If you&amp;rsquo;ve been living under a rock, you may not have heard of the recent Log4J2 vulnerability. If you&amp;rsquo;re using the default, out-of-the-box Spring Boot logging support, then this does &lt;em&gt;not&lt;/em&gt; apply to you! But, if you are using Log4j2, specifically, then you need to read this post on &lt;a href="https://spring.io/blog/2021/12/10/log4j2-vulnerability-and-spring-boot"&gt;Log4j2 and Spring Boot&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/brunoborges/status/1469426918550245377?s=12"&gt;Bruno Borges tweets this very simple workaround for those of you who are using Log4j2 and can&amp;rsquo;t change the startup scripts of your application afflicted by the Log4j2 exploit&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Once you&amp;rsquo;re sure your applications are healthy and happy, check out the new Spring Native 0.11 release! And its new AOT engine, which &lt;a href="https://spring.io/blog/2021/12/09/new-aot-engine-brings-spring-native-to-the-next-level"&gt; brings Spring Native to the Next Level&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Don&amp;rsquo;t want to read the blog? I did a &lt;a href="https://twitter.com/SpringTipsLive"&gt;Spring Tips (@SpringTipsLive) video&lt;/a&gt; you can &lt;a href="https://www.youtube.com/watch?v=DVo5vmk5Cuw&amp;feature=emb_title"&gt;watch to see everything new and nice in Spring Native 0.11&lt;/a&gt;. This video goes deep, starting with the basics, looking at performance numbers (dramatic reductions in compile-time, startup time, and runtime memory footprint) for some typical workloads, and then looks at the new AOT engine&amp;rsquo;s extension planes.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/12/09/a-bootiful-podcast-transformative-leader-brilliant-technologist-my-friend-patrick-chanezon"&gt;A Bootiful Podcast: Transformative leader, brilliant technologist, my friend, Patrick Chanezon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/12/08/secure-communications-end-to-end-for-spring-boot-apps-in-zero-trust-environment"&gt;Secure communications end-to-end for Spring Boot apps ? in Zero Trust environment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/12/08/spring-cloud-gateway-and-grpc"&gt;Spring Cloud Gateway and gRPC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/12/14/spring-cloud-square-0-4-0-rc1-is-available"&gt;Spring Cloud Square 0.4.0-RC1 is available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/12/14/spring-graphql-1-0-0-m4-released"&gt;Spring GraphQL 1.0.0-M4 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/embed/uJwx8km1N2w"&gt;Spring Native for Serverless Java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springtools4/status/1468665152140685320?s=12"&gt;Spring Tools 4 on Twitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/12/08/spring-tools-4-13-0-released"&gt;Spring Tools 4.13.0 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/rey_antoine/status/1469686287808737280?s=12"&gt;Both Vaadin Flow and Vaadin Fusion versions of the Spring Petclinic sample have joined the Spring Petclinic Community &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/ghillert/status/1468401392570097666?s=12"&gt;The amazing Gunnar Hillert has posted the Oracle Coherence Sock Shop Microservices example app for Spring Boot, which adds better Tracing support using Spring Cloud Sleuth for Jaeger and Zipkin. This is based on an original app from Weaveworks.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/rotnroll666/status/1470007457044967424?s=12"&gt;Neo4j&amp;rsquo;s Michael Simons has this great tweet: Did you know that Neo4js releases the Neo4j Java driver as a slim option, under the coordinates &lt;code&gt;org.neo4j.driver&lt;/code&gt;:&lt;code&gt;neo4j-java-driver-slim&lt;/code&gt;, without shaded dependencies? This might be handy if your project already has a dependency to Project Reactor or Netty. &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/rorypreddy/status/1470090509549023240?s=12"&gt;Microsoft&amp;rsquo;s Rory Preddy tweeted that a demo-heavy Monitoring Java on Azure series is now available. Besides data migration, end-to-end monitoring is the #1 challenge for developers migrating Spring Boot apps to the cloud - in this series, we demystify all!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/sharat_chander/status/1468849392404811780?s=21"&gt;Now Available: JDK migration guide Includes significant changes &amp;amp; enhancements in #JDK17 ?? Move your Java version forward&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/piotr_minkowski/status/1468874124575580160?s=12"&gt;Piotr Mi?kowski has a nice little tip: If you use a dedicated management port for Actuator endpoints starting from Spring Boot 2.6 you may expose a particular health group on the server main port under the additional path. It is useful in #Kubernetes liveness and readiness probes.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=rS2AhcIPQEs"&gt;Tanzu Tuesdays 74 - Carvel support in Kubeapps - New pluggable gRPC-based architecture - YouTube&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/JavaAtMicrosoft/status/1469017124328730627"&gt;Azure Spring Cloud scales #SpringBoot apps to billions of requests per day without the hassle of managing infrastructure. See it in action &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/VMware/status/1468962596879417355"&gt; This is a great, video overview of VMware¨s free, open-source Kubernetes distro, the Tanzu Community Edition. &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A nice report on the Microsoft Tech Community: &lt;a href="https://techcommunity.microsoft.com/t5/apps-on-azure-blog/2021-report-how-developers-migrate-spring-apps-to-the-cloud/ba-p/3021421"&gt;How developers migrate Spring apps to the cloud&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Square 0.4.0-RC1 is available</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/12/14/spring-cloud-square-0-4-0-rc1-is-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Olga Maciaszek-Sharma</name>
+    </author>
+    <id>tag:spring.io,2021-12-14:4640</id>
+    <updated>2021-12-14T18:24:22Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Release Candidate 1 (RC1) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Square&lt;/a&gt; 0.4.0 is available today. The release can be found in &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the 0.4.0-RC1 &lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square/releases/tag/v0.4.0-RC1"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is primarily a bugfix release. See all issues included in this release &lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square/milestone/2?closed=1"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-rc1" class="anchor" name="notable-changes-in-rc1"&gt;&lt;/a&gt;Notable changes in RC1:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Cloud Sleuth integration for OkHttpClient &lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square/issues/36"&gt;#36&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The documentation for this milestone can be found &lt;a href="https://spring-projects-experimental.github.io/spring-cloud-square/docs/current/reference/html/index.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring GraphQL 1.0.0-M4 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/12/14/spring-graphql-1-0-0-m4-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Brian Clozel</name>
+    </author>
+    <id>tag:spring.io,2021-12-14:4641</id>
+    <updated>2021-12-14T16:04:00Z</updated>
+    <content type="html">&lt;p&gt;The Spring GraphQL team has just released the 4th milestone towards a 1.0.0 release. Thanks to all contributors!&lt;/p&gt;
+&lt;p&gt;In this milestone, we have further improved the annotation programming model and extended the Spring Data support that were provided &lt;a href="https://spring.io/blog/2021/10/28/spring-graphql-1-0-0-m3-released"&gt;in the previous milestones&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#interface-projections-for-graphql-arguments" class="anchor" name="interface-projections-for-graphql-arguments"&gt;&lt;/a&gt;Interface Projections for GraphQL Arguments&lt;/h2&gt;
+&lt;p&gt;If you&amp;rsquo;re familiar with Spring Data&amp;rsquo;s &lt;a href="https://docs.spring.io/spring-data/commons/docs/current/reference/html/#projections.interfaces"&gt;Interface-based Projections&lt;/a&gt;, then this new feature will make perfect can sense: you can use a well-defined interface to work with GraphQL arguments, without the need for any Object implementation. &lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Controller&#xD;
+public class BookController {&#xD;
+&#xD;
+    @MutationMapping&#xD;
+    public Book addBook(@Argument BookInputProjection bookInput) {&#xD;
+        // ...&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+@ProjectedPayload&#xD;
+interface BookInputProjection {&#xD;
+&#xD;
+    String getName();  // this maps to &amp;quot;name&amp;quot; argument&#xD;
+&#xD;
+    @Value(&amp;quot;#{target.author + &amp;#39; &amp;#39; + target.name})&#xD;
+    String getAuthorAndName();&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can learn more about this in the &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/#controllers-schema-mapping-projectedpayload-argument"&gt;@ProjectedPayload Interface&lt;/a&gt; section of the docs.&lt;/p&gt;&lt;h2&gt;&lt;a href="#query-by-example-support" class="anchor" name="query-by-example-support"&gt;&lt;/a&gt;Query By Example Support&lt;/h2&gt;
+&lt;p&gt;Spring GraphQL now supports use of the Query by Example, Spring Data extension for data fetching. To use this extension, you don&amp;rsquo;t need to write queries through store-specific query languages, but simply provide an example of a domain object with populated fields, the repository implementation will do the rest!&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;QueryByExampleDataFetcher&lt;/code&gt; makes it easy to create a &lt;code&gt;DataFetcher&lt;/code&gt; that binds GraphQL arguments onto an example object and then uses that to query for the data. There is also a feature for automated discovery of Query By Example repositories, based on the &lt;code&gt;@GraphQlRepository&lt;/code&gt; annotation, and their mapping to top-level GraphQL queries.&lt;/p&gt;
+&lt;p&gt;If your data store of choice supports it, this &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/#data-querybyexample"&gt;adds another way to leverage your Spring Data repositories in a Spring GraphQL application&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#standard-bean-validation-for-graphql-arguments" class="anchor" name="standard-bean-validation-for-graphql-arguments"&gt;&lt;/a&gt;Standard Bean Validation for GraphQL Arguments&lt;/h2&gt;
+&lt;p&gt;On top of the existing constraints enforced at the schema level, you can now use Standard Bean Validation to validate GraphQL arguments that are declared as controller method parameters. If the argument doesn&amp;rsquo;t match the defined constraints, a validation exception is thrown and written to the relevant &amp;ldquo;errors&amp;rdquo; section of the GraphQL response. &lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;@Controller&#xD;
+public class BookController {&#xD;
+&#xD;
+    @MutationMapping&#xD;
+    public Book addBook(@Argument @Valid BookInput bookInput) {&#xD;
+        // ...&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+public class BookInput {&#xD;
+&#xD;
+    @NotNull&#xD;
+    private String title;&#xD;
+&#xD;
+    @NotNull&#xD;
+    @Size(max=13)&#xD;
+    private String isbn;&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is similar to the existing support in Spring MVC or Spring WebFlux, you can &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/#controllers-schema-mapping-validation"&gt;learn more about &lt;code&gt;@Argument&lt;/code&gt; validation&lt;/a&gt; in the reference docs.&lt;/p&gt;&lt;h3&gt;&lt;a href="#context-access" class="anchor" name="context-access"&gt;&lt;/a&gt;Context Access&lt;/h3&gt;
+&lt;p&gt;A new &lt;code&gt;@ContextValue&lt;/code&gt; annotation provides convenient access to values in the &lt;code&gt;GraphQLContext&lt;/code&gt; from controller methods.&lt;/p&gt;
+&lt;p&gt;Controller methods can access the authenticated user by declaring a method argument of type &lt;code&gt;javax.security.Principal&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;@BatchMapping&lt;/code&gt; methods can access the same &lt;code&gt;GraphQLContext&lt;/code&gt; that is also available for &lt;code&gt;@SchemaMapping&lt;/code&gt; methods and to any &lt;code&gt;DataFetcher&lt;/code&gt;.&lt;/p&gt;&lt;h3&gt;&lt;a href="#more" class="anchor" name="more"&gt;&lt;/a&gt;More&lt;/h3&gt;
+&lt;p&gt;More &lt;a href="https://github.com/spring-projects/spring-graphql/milestone/5?closed=1"&gt;improvements and fixes made their way into their release&lt;/a&gt; and they&amp;rsquo;re available right now in the new Spring GraphQL 1.0.0-M4 release from the Spring Milestone repository.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, you can &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/#boot-graphql"&gt;get started with Spring GraphQL&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-graphql/issues"&gt;raise issues on our GitHub project&lt;/a&gt;.&lt;br/&gt;If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-graphql"&gt;&lt;code&gt;spring-graphql&lt;/code&gt; tag&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-graphql/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-graphql"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-graphql/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-graphql/docs/1.0.0-M4/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-graphql"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Log4J2 Vulnerability and Spring Boot</title>
     <link rel="alternate" href="https://spring.io/blog/2021/12/10/log4j2-vulnerability-and-spring-boot" />
@@ -22,10 +139,23 @@
 &lt;p&gt;Spring Boot users are only affected by this vulnerability if they have &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.logging.log4j"&gt;switched the default logging system to Log4J2&lt;/a&gt;. The &lt;code&gt;log4j-to-slf4j&lt;/code&gt; and &lt;code&gt;log4j-api&lt;/code&gt; jars that we include in &lt;code&gt;spring-boot-starter-logging&lt;/code&gt; cannot be exploited on their own. Only applications using &lt;code&gt;log4j-core&lt;/code&gt; and including user input in log messages are vulnerable.&lt;/p&gt;
 &lt;p&gt;Our upcoming v2.5.8 &amp;amp; v2.6.2 releases (due Dec 23, 2021) will pick up Log4J v2.15.0, but since this is such a serious vulnerability you may want to override our dependency management and upgrade your Log4J2 dependency sooner.&lt;/p&gt;&lt;h2&gt;&lt;a href="#maven" class="anchor" name="maven"&gt;&lt;/a&gt;Maven&lt;/h2&gt;
 &lt;p&gt;For Maven users, you can follow &lt;a href="https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#using"&gt;these instructions&lt;/a&gt; and the set the &lt;code&gt;log4j2.version&lt;/code&gt; property.&lt;/p&gt;
-&lt;p&gt;For example:&lt;/p&gt;
+&lt;p&gt;For example, if you are using our parent POM you can set the &lt;code&gt;log4j2.version&lt;/code&gt; property:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;properties&amp;gt;&#xD;
     &amp;lt;log4j2.version&amp;gt;2.15.0&amp;lt;/log4j2.version&amp;gt;&#xD;
 &amp;lt;/properties&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you are not using our parent, but instead are importing the &lt;code&gt;spring-boot-dependencies&lt;/code&gt; BOM, you&amp;rsquo;ll need to use a &lt;code&gt;&amp;lt;dependencyManagement&amp;gt;&lt;/code&gt; section:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencyManagement&amp;gt;&#xD;
+    &amp;lt;dependencies&amp;gt;&#xD;
+        ... other dependencies including spring-boot-dependencies&#xD;
+        &amp;lt;dependency&amp;gt;&#xD;
+            &amp;lt;groupId&amp;gt;org.apache.logging.log4j&amp;lt;/groupId&amp;gt;&#xD;
+            &amp;lt;artifactId&amp;gt;log4j-bom&amp;lt;/artifactId&amp;gt;&#xD;
+            &amp;lt;version&amp;gt;2.15.0&amp;lt;/version&amp;gt;&#xD;
+           &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+        &amp;lt;/dependency&amp;gt;&#xD;
+    &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;To check that the override as been applied run &lt;code&gt;./mvnw dependency:list | grep log4j&lt;/code&gt; and check that the version is 2.15.0.&lt;/p&gt;&lt;h2&gt;&lt;a href="#gradle" class="anchor" name="gradle"&gt;&lt;/a&gt;Gradle&lt;/h2&gt;
 &lt;p&gt;For Gradle users, you can follow &lt;a href="https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/#managing-dependencies.dependency-management-plugin.customizing"&gt;these instructions&lt;/a&gt; and update the version property, import the BOM or use a&lt;code&gt;resolutionStrategy&lt;/code&gt;.&lt;/p&gt;
@@ -1302,323 +1432,6 @@ Message&amp;lt;byte[]&amp;gt; reply = GrpcUtils.requestReply(message);
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.6.1"&gt;11 bug fixes and documentation improvements&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
 &lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.6.1/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Data MongoDB - Relation Modelling</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/11/29/spring-data-mongodb-relation-modelling" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Christoph Strobl</name>
-    </author>
-    <id>tag:spring.io,2021-11-05:4595</id>
-    <updated>2021-11-29T09:30:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;MongoDB&amp;#8217;s flexible schema allows for multiple patterns when it comes to modeling relationships between entities. Also, for many use cases, a denormalized data model (storing related data right within a single document) might be the best choice, because all information is kept in one place, so that the application requires fewer queries to fetch all data. However, this approach also has its downsides, such as potential data duplication, larger documents, and the maximum document size.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In general, MongoDB recommends using normalized data models when the advantages of embedding are neglected by the implications of duplication. In this blog post, we take a look at the different possibilities of linking documents with &lt;em&gt;manual references&lt;/em&gt; and &lt;em&gt;DBRefs&lt;/em&gt; when the need occurs to work with relations.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;em&gt;DBRef&lt;/em&gt; is MongoDB&amp;#8217;s native element to express references to other documents with an explicit format &lt;code&gt;{ $db : ・, $ref : ・, $id : ・ }&lt;/code&gt; that holds information about the target &lt;em&gt;database&lt;/em&gt;, &lt;em&gt;collection&lt;/em&gt;, and &lt;em&gt;id&lt;/em&gt; value of the references element, best suited to link to documents distributed across different collections.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;em&gt;Manual references&lt;/em&gt;, on the other hand, are simpler in structure (by storing only the &lt;em&gt;id&lt;/em&gt; of the referenced document), but are, therefore, not as flexible when it comes to mixed collection references.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Having set the terminology, let¨s introduce well known domain types, such as &lt;code&gt;Book&lt;/code&gt; and &lt;code&gt;Publisher&lt;/code&gt;, and their obvious relation to one another:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;class Book {
-    private String isbn13;
-    private String title;
-    private int pages;
-}
-
-class Publisher {
-    private String name;
-    private String arconym;
-    private int foundationYear;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Embedding the &lt;code&gt;Publisher&lt;/code&gt; within each and every &lt;code&gt;Book&lt;/code&gt; is not an appealing option, as it would lead to data duplication and put an unnecessary burden on storage and maintainability:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;class Book {
-    // ...
-    private Publisher publisher;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Though this storage format allows for atomic updates and offers the most flexibility when it comes to querying for specific attributes, the repetition of the &lt;code&gt;Publisher&lt;/code&gt; information, as shown in the snippet below, might not be worth this cost:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="javascript"&gt;{
-    "_id" : "617cfb",
-    "isbn13" : "978-0345503800",
-    "title" : "The Warded Man",
-    "pages" : 432,
-    "publisher" : {
-        "name" : "Del Rey Books",
-        "arconym" : "DRB",
-        "foundationYear" : 1977
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The same goes for embedding a collection of &lt;code&gt;Books&lt;/code&gt; within the &lt;code&gt;Publisher&lt;/code&gt;, which causes unnecessarily large documents.
-Normalizing the model and working with linked documents can mitigate the issue.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;A first step is to determine the direction of the relation, to figure out which part of the relation needs to hold the reference, if not both. This decision will influence our lookup, storage, and query options available later on.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="linking-with-dbrefs"&gt;&lt;a class="anchor" href="#linking-with-dbrefs"&gt;&lt;/a&gt;Linking with DBRefs&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In this case, the &lt;code&gt;Publisher&lt;/code&gt; holds references to the associated &lt;code&gt;Books&lt;/code&gt;. The idea is to store those references as an array within the &lt;code&gt;Publisher&lt;/code&gt; document:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;class Publisher {
-    // ...
-    @DBRef
-    List&amp;lt;Book&amp;gt; books;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In the above snippet, the books property is annotated with &lt;code&gt;@DBRef&lt;/code&gt;. This advises the Spring Data mapping layer to store elements of the property as MongoDB native &lt;code&gt;$dbref&lt;/code&gt; elements, which looks like the following:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="javascript"&gt;{
-    "_id" : "833f7d",
-    "name" : "Del Rey Books",
-    "arconym" : "DRB",
-    "foundationYear" : 1977,
-    "books" : [
-        {
-            "$ref" : "book",
-            "$id" : "617cfb"
-        },
-        {
-            "$ref" : "book",
-            "$id" : "23e78f"
-        }
-    ]
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Using the &lt;code&gt;@DBRef&lt;/code&gt; annotation lets us reduce storage size by not repeating all &lt;code&gt;Publisher&lt;/code&gt; information within the Book, which is good. Still, this approach has its downsides.
-The &lt;code&gt;Book&lt;/code&gt; no longer holds information about the publisher, which may impact queries that look up &lt;code&gt;Books&lt;/code&gt; by attributes of the &lt;code&gt;Publisher&lt;/code&gt;. The lack of back reference from the &lt;code&gt;Book&lt;/code&gt; to the publisher will also affect performance when looking up the &lt;code&gt;Publisher&lt;/code&gt; for a given &lt;code&gt;Book&lt;/code&gt;, since we now have to issue a query against the &lt;code&gt;Publisher&lt;/code&gt; collection that matches a &lt;code&gt;Book.id&lt;/code&gt; against the &lt;code&gt;books&lt;/code&gt; field of a publisher, instead of heading directly for its &lt;em&gt;id&lt;/em&gt;. Additionally the &lt;code&gt;books&lt;/code&gt; array in &lt;code&gt;Publisher&lt;/code&gt; uses a complex object that stores more information than necessary, whereas a &lt;em&gt;manual reference&lt;/em&gt; that uses the &lt;em&gt;id&lt;/em&gt; alone would have been sufficient, since all references objects are held in the same target collection.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Fortunately, there are ways to improve, starting with adding a back reference to the &lt;code&gt;Publisher&lt;/code&gt;, (for example, by its &lt;code&gt;id&lt;/code&gt;):&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;class Book {
-    // ・
-    private String publisherId;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="linking-with-manual-references"&gt;&lt;a class="anchor" href="#linking-with-manual-references"&gt;&lt;/a&gt;Linking with Manual References&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Next, let¨s switch from &lt;em&gt;DBRef&lt;/em&gt; to &lt;em&gt;manual references&lt;/em&gt; for storing the collection of &lt;code&gt;Book&lt;/code&gt; references. The obvious step would be to remove the &lt;code&gt;@DBRef&lt;/code&gt; annotation and replace the &lt;code&gt;List&amp;lt;Book&amp;gt;&lt;/code&gt; with a &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt;, as in the snippet below:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;class Publisher {
-    // ・
-    List&amp;lt;String&amp;gt; bookIds;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="javascript"&gt;{
-    ・
-    "bookIds" : ["617cfb", "23e78f", ・ ]
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;To add a new &lt;code&gt;Book&lt;/code&gt; to the &lt;code&gt;bookIds&lt;/code&gt; field of &lt;code&gt;Publisher&lt;/code&gt;, we could use the following statement.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;template.update(Publisher.class)
-    .matching(where("id").is(publisher.id))
-    .apply(new Update().push("bookIds", book.id))
-    .first();&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Following this approach optimizes for storage format and makes a very explicit statement about the data type used in both the domain model as well as the database. Nevertheless, just &lt;code&gt;bookIds&lt;/code&gt; does not give you the context of the collection in which to look up the values contained in the &lt;code&gt;bookIds&lt;/code&gt; field.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="linking-using-declarative-manual-references"&gt;&lt;a class="anchor" href="#linking-using-declarative-manual-references"&gt;&lt;/a&gt;Linking using Declarative Manual References&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Starting with &lt;a href="https://spring.io/blog/2021/11/12/spring-data-2021-1-0-goes-ga"&gt;Spring Data MongoDB 3.3.0&lt;/a&gt;, &lt;em&gt;manual references&lt;/em&gt; can be expressed in a declarative way by using the &lt;code&gt;@DocumentReference&lt;/code&gt; annotation:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;class Publisher {
-    // ・
-    @DocumentReference
-    List&amp;lt;Book&amp;gt; books;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;By default, this tells the mapping layer to extract the &lt;code&gt;id&lt;/code&gt; value of the referenced entity for storage, loading the referenced document itself on read.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="javascript"&gt;{
-    ・
-    "books" : ["617cfb", ・ ]
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Because the mapping layer is aware of the link between the documents, update statements, such as the one shown earlier, detect the association and extract the &lt;em&gt;id&lt;/em&gt; for storage:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;template.update(Publisher.class)
-    .matching(where("id").is(publisher.id))
-    .apply(new Update().push("books", book))
-    .first();&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Also, the back reference from &lt;code&gt;Book&lt;/code&gt; to &lt;code&gt;Publisher&lt;/code&gt; could be modeled this way. In this case, it might make sense to delay the retrieval of the publisher until first access of the property to avoid eager loading delays:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;class Book {
-    // ・
-    @DocumentReference(lazy=true)
-    private Publisher publisher;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;By using declarative links, we can now preserve mapping functionality while optimizing for storage. Still, we need to be careful when adding new &lt;code&gt;Book&lt;/code&gt; instances, as those also need to be added to the &lt;code&gt;books&lt;/code&gt; field of the &lt;code&gt;Publisher&lt;/code&gt;, to establish the link:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;template.save(newBook);
-
-template.update(Publisher.class)
-    .matching(where("id").is(newBook.publisher.id))
-    .apply(new Update().push("books", newBook))
-    .first();&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The above snippet outlines very well the non-atomic nature of working with links between documents, which may require to run operations within a &lt;a href="https://docs.mongodb.com/manual/core/transactions/"&gt;Transaction&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="one-to-many-style-references"&gt;&lt;a class="anchor" href="#one-to-many-style-references"&gt;&lt;/a&gt;One-To-Many Style References&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Depending on your application&amp;#8217;s needs, it can be feasible to invert the relation between &lt;code&gt;Book&lt;/code&gt; and &lt;code&gt;Publisher&lt;/code&gt; so that the linking element is solely stored within the &lt;code&gt;Book&lt;/code&gt; documents. This lets you store &lt;code&gt;Books&lt;/code&gt; without having to think about updating the &lt;code&gt;Publisher&lt;/code&gt; document, as we saw in the last snippet.
-To do so, we need to do two things. First, we need to tell the mapping layer to omit storing links from &lt;code&gt;Publisher&lt;/code&gt; to &lt;code&gt;Book&lt;/code&gt; and second, update the &lt;em&gt;lookup query&lt;/em&gt; when retrieving linked &lt;code&gt;Books&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The initial part is rather easy, applying an additional &lt;code&gt;@ReadOnlyPorperty&lt;/code&gt; annotation to the &lt;code&gt;books&lt;/code&gt; property. The other part requires us to update the &lt;code&gt;lookup&lt;/code&gt; attribute of the &lt;code&gt;@DocumentReference&lt;/code&gt; annotation with a custom query:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;class Publisher {
-    // ・
-    @ReadOnlyProperty
-    @DocumentReference(lookup="{'publisher':?#{#self._id} }")
-    List&amp;lt;Book&amp;gt; books;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In the snippet above, we make use of the expression  support within the query parser of Spring Data. In doing so, we can access the raw &lt;code&gt;Publisher&lt;/code&gt; document by using the &lt;code&gt;#self&lt;/code&gt; attribute and can extract its identifier to then use it when querying the &lt;code&gt;Book&lt;/code&gt; collection for matching elements.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="final-remarks"&gt;&lt;a class="anchor" href="#final-remarks"&gt;&lt;/a&gt;Final Remarks&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Having a single aggregate root with embedded data has many advantages. Still, it is important to understand how to model relations once those advantages are superseded by other concerns, such as storage size or operability.
-We have seen that, by moving from an &lt;em&gt;embedded&lt;/em&gt; approach to &lt;em&gt;DBRefs&lt;/em&gt; and on to &lt;em&gt;manual references&lt;/em&gt;, we can reduce storage size. However, we have to deal with other problems, such as changes that affect multiple documents and limited query options.
-&lt;code&gt;@DocumentReference&lt;/code&gt; can be a powerful tool that lets you express and customize links between documents. You can learn more about it in our &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/3.3.0/reference/html/#mapping-usage.document-references"&gt;Reference Documentation&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Nevertheless, before you leave, please always keep in mind that links between documents require additional server roundtrips. Therefore, make sure to have indexes available that support your lookup. A collection of linked documents is bulk loaded, restoring ordering on a best effort basis within the memory of your application.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Also, always ask yourself which is best for your application? Is the default embedding approach the better solution? Do you really need the cyclic back reference? Should a link be lazy? How will non-atomic updates affect your application? And finally, which queries do you need to run?&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>A Bootiful Podcast: Reactive-System and Functional Programming legend Debasish Ghosh</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/11/25/a-bootiful-podcast-reactive-system-and-functional-programming-legend-debasish-ghosh" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-11-25:4622</id>
-    <updated>2021-11-25T09:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to functional programming- and reactive systems-legend &lt;a href="https://twitter.com/debasishg"&gt;Debasish Ghosh (@debasishg)&lt;/a&gt;. And Happy Thanksgiving, if you celebrate! &lt;/p&gt;
-&lt;iframe title="Reactive-System and Functional Programming legend Debasish Ghosh" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=dm7ax-113e665-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;btn-skin=7"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring (Happy Thanksgiving!) - November 23rd, 2021</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/11/23/this-week-in-spring-happy-thanksgiving-november-23rd-2021" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-11-23:4621</id>
-    <updated>2021-11-23T09:00:00Z</updated>
-    <content type="html">&lt;img style = "width : 100%; margin-top : 2em"  src="https://raw.githubusercontent.com/joshlong/blog-images/master/bootiful-thanksgiving-2021/bootiful-thanksgiving.png" /&gt;
-&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! &lt;/p&gt;
-&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;. This Thursday is Thanksgiving here in the US, where I live. it&amp;rsquo;s a time during which we Americans try to be thankful for what we have. And me, personally? I&amp;rsquo;ve got a lot of things for which I am grateful, this week and always. &lt;/p&gt;
-&lt;p&gt;I am thankful for my family and friends. A person is the company they keep, and I am lucky to have excellent company in my life. &lt;/p&gt;
-&lt;p&gt;I am thankful for my health. Right now, pandemic be danged, I&amp;rsquo;m healthy and happy, something for which I am endlessly grateful because I know what it&amp;rsquo;s like not to be healthy. &lt;/p&gt;
-&lt;p&gt;I am thankful for the fantastic Spring ecosystem. It&amp;rsquo;s an endlessly replenishing fount of awesomeness. Have you tried the new Spring Native 0.11 preview support (now available on the &lt;a href="https://start.spring.io"&gt;Spring Initializr&lt;/a&gt;!)? It&amp;rsquo;s amazing. My GraalVM native-image applications are about 30% faster in startup and take even less memory at runtime. It&amp;rsquo;s amazing! It&amp;rsquo;s trivial to get native images for of many kinds of workloads - Spring Integration, Spring Batch, Spring Data, Spring Security, Spring Webflux, JPA, RSocket, Spring Webflux, R2DBC, Spring Cloud, and so much more. &lt;/p&gt;
-&lt;p&gt;And we, dear community, are kind of like a big ol&amp;rsquo; virtual family. So I know I speak for the entire Spring team when I say that we are very, very, very thankful for you, too. &lt;em&gt;Thank you&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;And lastly, I am thankful for the new and novel. That&amp;rsquo;s a massive part of the reason I put this roundup together every week. Idle hands are the devil&amp;rsquo;s playthings, as they say. But, this community is so vibrant that there&amp;rsquo;s always something fun to explore! And, on that note, let&amp;rsquo;s get to this week&amp;rsquo;s roundup&amp;hellip; &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/18/a-bootiful-podcast-fellow-java-champion-kate-stanley-on-kubernetes-and-apache-kafka"&gt;A Bootiful Podcast: Fellow Java Champion Kate Stanley on Kubernetes and Apache Kafka&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Hi, Spring fans! I hope you&amp;rsquo;ll check out the recent talk I did, &lt;a href="https://www.youtube.com/watch?v=5tdHHsDiiWc"&gt;&lt;em&gt;Bootiful Kotlin&lt;/em&gt;, at the Kotlin Hyderabad event&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://www.steadybit.com/blog/continuously-verify-startup-times/"&gt;Continuously Verify Your Startup Times, so You Won&amp;rsquo;t Be Surprised Badly.&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/19/get-to-know-a-kubernetes-operator"&gt;Get to Know a Kubernetes Operator!&lt;/a&gt; I wrote this post as a sort of guided tour of some of my favorite operators for Kubernetes.&lt;/li&gt;
-  &lt;li&gt;The RSocket Routing Broker has been renamed to RSocket Broker. The new Github organization and &lt;a href="https://github.com/rsocket-broker"&gt;projects are here&lt;/a&gt;. Maven coordinates and java packages have been updated. Updated &lt;a href="https://github.com/spencergibb/rsocket-broker-sample"&gt;samples are here&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/18/spring-amqp-spring-for-rabbitmq-2-4-is-now-available"&gt;Spring AMQP (Spring for RabbitMQ) 2.4 is Now Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/18/spring-boot-2-4-13-available-now"&gt;Spring Boot 2.4.13 available now&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/18/spring-boot-2-5-7-is-now-available"&gt;Spring Boot 2.5.7 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/19/spring-boot-2-6-is-now-available"&gt;Spring Boot 2.6 is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/17/spring-cloud-netflix-version-2-2-10-release-is-now-available"&gt;Spring Cloud Netflix version 2.2.10.RELEASE is now available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/22/spring-hateoas-1-4-released"&gt;Spring HATEOAS 1.4 released&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/17/spring-tips-controllers-websockets"&gt;Spring Tips: @Controllers: WebSockets&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/11/18/spring-for-apache-kafka-2-8-is-now-available"&gt;Spring for Apache Kafka 2.8 is Now Available&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Speaking of &lt;em&gt;Spring Tips&lt;/em&gt;, it&amp;rsquo;s Thanksgiving here in the US, so I won&amp;rsquo;t be producing an episode this week. C&amp;rsquo;ya next week!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Happy Thanksgiving! And &lt;em&gt;thank you&lt;/em&gt;! &lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
