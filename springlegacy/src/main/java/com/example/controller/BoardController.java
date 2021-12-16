@@ -29,6 +29,9 @@ public class BoardController {
 	// 게시글 목록 페이지 가져오기
 	@GetMapping("/list")
 	public String boardList() {
+		
+		
+		
 		return "board/boardList";
 	}
 

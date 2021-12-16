@@ -5,7 +5,35 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-12-14T19:00:00Z</updated>
+  <updated>2021-12-16T10:05:53Z</updated>
+  <entry>
+    <title>Spring Framework 5.3.14 and 5.2.19 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/12/16/spring-framework-5-3-14-and-5-2-19-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2021-12-16:4645</id>
+    <updated>2021-12-16T10:05:53Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;5.3.14&lt;/code&gt; and &lt;code&gt;5.2.19&lt;/code&gt; are available now.&lt;/p&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.3.14&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.3.14"&gt;36 fixes and improvements&lt;/a&gt;. Spring Framework &lt;code&gt;5.2.19&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.19.RELEASE"&gt;11 selected fixes and improvements&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Stay tuned for the announcement of Spring Framework &lt;code&gt;6.0.0-M1&lt;/code&gt; later today!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.3.14/reference/html/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tips: @Controllers and GraphQL</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/12/15/spring-tips-controllers-and-graphql" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2021-12-16:4643</id>
+    <updated>2021-12-16T04:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment, we continue our tour of all things &lt;code&gt;@Controller&lt;/code&gt; by looking at the nascent &lt;a href="https://github.com/spring-projects/spring-grapqhl"&gt;Spring GraphQL&lt;/a&gt; project&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/eVqmB2hsIVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - December 14th, 2021</title>
     <link rel="alternate" href="https://spring.io/blog/2021/12/14/this-week-in-spring-december-14th-2021" />
@@ -1400,38 +1428,6 @@ Message&amp;lt;byte[]&amp;gt; reply = GrpcUtils.requestReply(message);
   &lt;li&gt;&lt;a href="https://devblogs.microsoft.com/java/java-on-visual-studio-code-update-october-2021/"&gt;Java on Visual Studio Code Update ? October 2021&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;For a lot of folks, the days of using Docker Desktop for free are numbered. You might be interested in this blog on &lt;a href="http://kodeworx.net/posts/rancher_desktop_a_docker_desktop_replacement/"&gt;Rancher Desktop - A Docker Desktop Replacement &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Security Report for Spring AMQP (Spring for RabbitMQ)</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/11/29/security-report-for-spring-amqp-spring-for-rabbitmq" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Gary Russell</name>
-    </author>
-    <id>tag:spring.io,2021-11-29:4624</id>
-    <updated>2021-11-29T17:11:25Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;The recently released versions of Spring AMQP (2.4.0, 2.3.12, 2.2.20) contain a fix for &lt;a href="https://tanzu.vmware.com/security/cve-2021-22095"&gt;CVE-2021-22095&lt;/a&gt;, which can cause a potential &lt;code&gt;OutOfMemoryError&lt;/code&gt; for very large messages.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Boot version 2.6.0 and 2.5.7 will bring in the 2.4.0 and 2.3.12 versions of spring-amqp respectively. Users of Boot 2.4.x should override the &lt;code&gt;spring-amqp&lt;/code&gt; and &lt;code&gt;spring-rabbit&lt;/code&gt; versions to 2.3.12; users of Spring Boot 2.3.x should override the versions to 2.2.20.&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Boot 2.6.1 is now available</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/11/29/spring-boot-2-6-1-is-now-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2021-11-29:4623</id>
-    <updated>2021-11-29T13:49:03Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring Boot &lt;code&gt;2.6.1&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.6.1"&gt;11 bug fixes and documentation improvements&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="https://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="https://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-boot/docs/2.6.1/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
