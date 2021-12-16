@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.domain.BoardVO;
+import com.example.domain.Criteria;
 import com.example.service.BoardService;
 
 @Controller
@@ -29,9 +30,11 @@ public class BoardController {
 
 	// 게시글 목록 페이지 가져오기
 	@GetMapping("/list")
-	public String boardList(Model model) {
+	public String boardList(Criteria cri, Model model) {
 		
-		List<BoardVO> boardList = boardService.getAllBoards();
+		System.out.println("cri : " + cri);
+		
+		List<BoardVO> boardList = boardService.getBoardsByCri(cri);
 		
 		model.addAttribute("boardList", boardList);
 		

@@ -38,6 +38,15 @@
 		]]>
 	</select>
 	
+	<select id="getBoardByCri" resultType="BoardVO">
+		<![CDATA[
+			SELECT *
+			FROM board
+			ORDER BY re_ref DESC, re_seq ASC
+			LIMIT #{startRow}, #{amount}
+		]]>
+	</select>
+	
 	<!-- =========== update =========== -->
 	<update id="addViewCount">
 		<![CDATA[

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.domain.BoardVO;
+import com.example.domain.Criteria;
 import com.example.mapper.BoardMapper;
 
 @Service
@@ -37,5 +38,14 @@ public class BoardService {
 	
 	public List<BoardVO> getAllBoards() {
 		return boardMapper.getAllBoards();
+	}
+	
+	public List<BoardVO> getBoardsByCri(Criteria cri) {
+	
+		int startRow = (cri.getPageNum() - 1) * cri.getAmount();
+		
+		cri.setStartRow(startRow);
+		
+		return boardMapper.getBoardByCri(cri);
 	}
 }
