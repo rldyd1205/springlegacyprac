@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,9 @@
 <style>
 #contact {
 	padding-top: 300px;
+}
+tr {
+	cursor: pointer;
 }
 </style>
 </head>
@@ -30,11 +35,11 @@
 				</div>
 				<div class="divider-custom-line"></div>
 			</div>
-			<div >
+			<div>
 				<button type="button" class="btn btn-primary"
-				onclick="location.href='/board/write'">새글 쓰기</button>
+					onclick="location.href='/board/write'">새글 쓰기</button>
 			</div>
-			
+
 			<!-- Contact Section Form-->
 			<div class="row justify-content-center">
 				<table class="table table-hover">
@@ -48,7 +53,23 @@
 						</tr>
 					</thead>
 					<tbody>
-						
+					<c:choose>
+						<c:when test="${ fn:length(boardList) gt 0}">
+							<c:forEach var="board" items="${ boardList }">
+								<tr onclick="location.href='/board/content?num=${ board.num }'">
+									<th>${ board.num }</th>
+									<th>${ board.subject }</th>
+									<th>${ board.memberId }</th>
+									<th><fmt:formatDate value="${ board.regDate }" pattern="yyyy.MM.dd HH:mm"/></th>
+									<th>${ board.viewCount }</th>
+								</tr>
+								
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<td colspan="5">게시글이 존재하지 않습니다.</td>
+						</c:otherwise>
+					</c:choose>
 					</tbody>
 				</table>
 			</div>

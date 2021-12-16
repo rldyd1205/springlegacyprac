@@ -29,6 +29,14 @@
 			WHERE num = #{num}
 		]]>
 	</select>
+		
+	<select id="getAllBoards" resultType="BoardVO">
+		<![CDATA[
+			SELECT *
+			FROM board
+			ORDER BY re_ref DESC, re_seq ASC
+		]]>
+	</select>
 	
 	<!-- =========== update =========== -->
 	<update id="addViewCount">

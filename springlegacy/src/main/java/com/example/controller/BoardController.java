@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -28,9 +29,11 @@ public class BoardController {
 
 	// 게시글 목록 페이지 가져오기
 	@GetMapping("/list")
-	public String boardList() {
+	public String boardList(Model model) {
 		
+		List<BoardVO> boardList = boardService.getAllBoards();
 		
+		model.addAttribute("boardList", boardList);
 		
 		return "board/boardList";
 	}

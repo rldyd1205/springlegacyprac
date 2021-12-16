@@ -1,5 +1,7 @@
 package com.example.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,5 +33,9 @@ public class BoardService {
 	
 	public void addViewCount(int num) {
 		boardMapper.addViewCount(num);
+	}
+	
+	public List<BoardVO> getAllBoards() {
+		return boardMapper.getAllBoards();
 	}
 }
