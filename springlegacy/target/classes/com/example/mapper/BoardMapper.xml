@@ -12,6 +12,54 @@
 	]]>
 	</select>
 	
+	<select id="getBoardByNum" resultType="BoardVO">
+		<![CDATA[
+			SELECT *
+			FROM board
+			WHERE num = #{num}
+		]]>
+	</select>
+		
+	<select id="getBoardsByCri" resultType="boardVO">
+		<![CDATA[
+			SELECT *
+			FROM board
+		]]>
+		<where>
+			<if test="type == 'subject'.toString()">
+				subject LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="type == 'content'.toString()">
+				content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="type == 'memberId'.toString()">
+				member_id LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</where>
+		<![CDATA[	
+			ORDER BY re_ref DESC, re_seq ASC
+			LIMIT #{startRow}, #{amount}
+		]]>
+	</select>
+	
+	<select id="getCountBoardsByCri" resultType="int">
+		<![CDATA[
+			SELECT COUNT(*)
+			FROM board
+		]]>
+		<where>
+			<if test="type == 'subject'.toString()">
+				subject LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="type == 'content'.toString()">
+				content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="type == 'memberId'.toString()">
+				member_id LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</where>
+	</select>
+	
 	<!-- =========== insert =========== -->
 	<insert id="writeBoard">
 		<![CDATA[
@@ -21,31 +69,6 @@
 				 #{viewCount}, #{regDate}, #{reRef}, #{reLev}, #{reSeq})
 		]]>
 	</insert>
-	
-	<select id="getBoardByNum" resultType="BoardVO">
-		<![CDATA[
-			SELECT *
-			FROM board
-			WHERE num = #{num}
-		]]>
-	</select>
-		
-	<select id="getAllBoards" resultType="BoardVO">
-		<![CDATA[
-			SELECT *
-			FROM board
-			ORDER BY re_ref DESC, re_seq ASC
-		]]>
-	</select>
-	
-	<select id="getBoardByCri" resultType="BoardVO">
-		<![CDATA[
-			SELECT *
-			FROM board
-			ORDER BY re_ref DESC, re_seq ASC
-			LIMIT #{startRow}, #{amount}
-		]]>
-	</select>
 	
 	<!-- =========== update =========== -->
 	<update id="addViewCount">

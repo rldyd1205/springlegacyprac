@@ -17,6 +17,7 @@ public interface BoardMapper {
 	
 	List<BoardVO> getBoardByCri(Criteria cri);
 	
+	int getCountBoardsByCri(Criteria cri);
 	
 	// =========== insert ===========
 	void writeBoard(BoardVO boardVO);

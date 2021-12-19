@@ -32,21 +32,20 @@ public class BoardController {
 	// 게시글 목록 페이지 가져오기
 	@GetMapping("/list")
 	public String boardList(Criteria cri, Model model) {
-		
+
 		System.out.println("cri : " + cri);
-		
+
 		List<BoardVO> boardList = boardService.getBoardsByCri(cri);
-		
-		List<BoardVO> allBoards = boardService.getAllBoards();
-		
-		int totalCount = allBoards.size();
+
+		int totalCount = boardService.getCountBoardsByCri(cri);
+
 		System.out.println("totalCount : " + totalCount);
-		
-		PageDTO pageDTO = new PageDTO(0, cri);
-		
+
+		PageDTO pageDTO = new PageDTO(totalCount, cri);
+
 		model.addAttribute("boardList", boardList);
 		model.addAttribute("pageMaker", pageDTO);
-		
+
 		return "board/boardList";
 	}
 

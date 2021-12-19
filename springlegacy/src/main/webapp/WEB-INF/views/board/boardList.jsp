@@ -76,17 +76,22 @@ tr {
 				</table>
 				<nav aria-label="Page navigation example">
 					<ul class="pagination">
-					<c:if test="${ pageMaker.prev eq true }">
-						<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-					</c:if>
-					<c:forEach var="i" begin="${ pageMaker.startPage }" end="${ pageMaker.endPage}">
-						<li class="page-item"><a class="page-link" href="#">${ i }</a></li>
-					</c:forEach>	
-						<li class="page-item"><a class="page-link" href="#">Next</a></li>
+						<c:if test="${ pageMaker.prev eq true }">
+							<li class="page-item"><a class="page-link"
+								href="/board/list?pageNum=${ pageMaker.startPage - 1 }">Previous</a></li>
+						</c:if>
+						<c:forEach var="i" begin="${ pageMaker.startPage }"
+							end="${ pageMaker.endPage }">
+							<li class="page-item"><a class="page-link"
+								href="/board/list?pageNum=${ i }&type=${ pageMaker.cri.type }&keyword=${ pageMaker.cri.keyword }">${ i }</a></li>
+						</c:forEach>
+						<c:if test="${ pageMaker.next eq true }">
+							<li class="page-item"><a class="page-link"
+								href="/board/list?pageNum=${ pageMaker.endPage + 1 }">Next</a></li>
+						</c:if>
 					</ul>
 				</nav>
 			</div>
-		</div>
 	</section>
 	<!-- Footer-->
 	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
