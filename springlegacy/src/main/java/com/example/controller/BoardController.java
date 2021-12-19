@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.domain.BoardVO;
 import com.example.domain.Criteria;
+import com.example.domain.PageDTO;
 import com.example.service.BoardService;
 
 @Controller
@@ -36,7 +37,15 @@ public class BoardController {
 		
 		List<BoardVO> boardList = boardService.getBoardsByCri(cri);
 		
+		List<BoardVO> allBoards = boardService.getAllBoards();
+		
+		int totalCount = allBoards.size();
+		System.out.println("totalCount : " + totalCount);
+		
+		PageDTO pageDTO = new PageDTO(0, cri);
+		
 		model.addAttribute("boardList", boardList);
+		model.addAttribute("pageMaker", pageDTO);
 		
 		return "board/boardList";
 	}
