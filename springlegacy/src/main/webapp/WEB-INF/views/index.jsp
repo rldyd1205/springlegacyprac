@@ -15,7 +15,7 @@
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="/resources/assets/img/avataaars.svg" alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">거니씨 메롱</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">메인 페이지</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -23,7 +23,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">거니씨 얼레리 꼴레리</p>
+                <p class="masthead-subheading font-weight-light mb-0">Main-Page index</p>
             </div>
         </header>
         

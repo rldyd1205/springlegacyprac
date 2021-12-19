@@ -15,7 +15,7 @@ public interface BoardMapper {
 	// 임시
 	List<BoardVO> getAllBoards();
 	
-	List<BoardVO> getBoardByCri(Criteria cri);
+	List<BoardVO> getBoardsByCri(Criteria cri);
 	
 	int getCountBoardsByCri(Criteria cri);
 	

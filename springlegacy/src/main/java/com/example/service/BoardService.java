@@ -46,7 +46,7 @@ public class BoardService {
 		
 		cri.setStartRow(startRow);
 		
-		return boardMapper.getBoardByCri(cri);
+		return boardMapper.getBoardsByCri(cri);
 	}
 	
 	public int getCountBoardsByCri(Criteria cri) {
