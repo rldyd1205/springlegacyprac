@@ -25,6 +25,8 @@ public class loginCheckInterceptor implements HandlerInterceptor{
 		
 		if (id == null) {
 			response.sendRedirect("/member/login");
+			
+			return false;
 		}
 		return true;
 	}
