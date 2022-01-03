@@ -94,51 +94,56 @@ public class MemberController {
 	}
 
 	@PostMapping("/join")
-	public ResponseEntity<String> join(MemberVO memberVO, String passwdCornfirm) {
-		// 1.아이디 중복 체크
+	public ResponseEntity<String> join(MemberVO memberVO, String passwdConfirm) {
+		// 1. 아이디 중복체크(DB에 있는지 확인)
 		String id = memberVO.getId();
 
-		MemberVO dbmemberVO = memberService.getMemberById(id);
+		MemberVO dbMemberVO = memberService.getMemberById(id);
+		System.out.println("dbMemberVO : " + dbMemberVO);
 
-		if (dbmemberVO != null) {
+		if (dbMemberVO != null) { // 이미존재하는 아이디
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "text/html; charset=UTF-8");
-			String str = JScript.back("중복된 아이디가 있습니다.");
+
+			String str = JScript.back("이미 존재하는 아이디입니다.");
 
 			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 		}
-
-		// 2. 비밀번호 맞는지 체크
+		// 2. 비밀번호, 비밀번호 확인 서로 같은지 체크
 		String passwd = memberVO.getPasswd();
-		System.out.println("passwd : " + passwd);
-		
-		if (passwd.equals(passwdCornfirm) == false) {
-			System.out.println("passwdCornfirm : " + passwdCornfirm);
+
+		// 비밀번호가 서로 다를때
+		if (passwd.equals(passwdConfirm) == false) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "text/html; charset=UTF-8");
-			String str = JScript.back("비밀번호가 틀렸습니다.");
+
+			String str = JScript.back("비밀번호가 서로 다릅니다.");
 
 			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 		}
 
-		// 3. 회원가입 날짜
+		// 아이디체크. 비밀번호체크 모두 통과했을때
+		System.out.println("수정 전 memberVO : " + memberVO);
+		// 회원가입 날짜 설정하기
 		memberVO.setRegDate(new Date());
 
-		// 4. 비밀번호 암호화
-		String hasPasswd = BCrypt.hashpw(passwd, BCrypt.gensalt());
-		memberVO.setPasswd(hasPasswd);
+		// 비밀번호 암호화하기
+		String hashPasswd = BCrypt.hashpw(passwd, BCrypt.gensalt());
+		memberVO.setPasswd(hashPasswd);
 
-		// 5. DB에 회원정보 등록하기(가입하기)
-		System.out.println("memberVO : " + memberVO);
+		System.out.println("수정 후 memberVO : " + memberVO);
+
+		// 3. DB에 등록
 		memberService.insertMember(memberVO);
 
-		// 6. 회원가입 완료 메세지 + 로그인 페이지로 보내기
+		// 4. 회원가입완료 메세지를 띄우고, 로그인화면으로 이동
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "text/html; charset=UTF-8");
+
 		String str = JScript.href("회원가입 완료", "/member/login");
 
 		return new ResponseEntity<String>(str, headers, HttpStatus.OK);
-	}
+	} // join
 
 	// 세션 쿠키 지우기(제거/삭제)
 	@GetMapping("/logout")
@@ -245,10 +250,10 @@ public class MemberController {
 		// 1. 현재 비밀번호 맞는지 체크
 		String id = (String) session.getAttribute("id");
 		MemberVO dbMemberVO = memberService.getMemberById(id);
-		
+
 		boolean isPasswdRight = BCrypt.checkpw(passwd, dbMemberVO.getPasswd());
-		
-		if (isPasswdRight == false) { //현재 비밀번호가 맞지 않음
+
+		if (isPasswdRight == false) { // 현재 비밀번호가 맞지 않음
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "text/html; charset=UTF-8");
 			String str = JScript.back("현재 비밀번호가 틀렸습니다.");
@@ -256,7 +261,7 @@ public class MemberController {
 			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 		}
 		// 2. 새 비밀번호 , 새비밀번호 확인 맞는지 체크
-		if (newPasswd.equals(newPasswdConfirm) == false) {//새 비밀번호와 새비밀번호 확인이 서로 다를 때
+		if (newPasswd.equals(newPasswdConfirm) == false) {// 새 비밀번호와 새비밀번호 확인이 서로 다를 때
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "text/html; charset=UTF-8");
 			String str = JScript.back("새 비밀번호와 새 비밀번호 확인이 서로 일치하지 않습니다.");
@@ -264,52 +269,52 @@ public class MemberController {
 			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 		}
 		// 3. DB비밀번호 변경-> 비밀번호 바꿔주는 Mapper 가서 만들기
-		
+
 		// 3-1 비밀번호 암호화
 		String hashPasswd = BCrypt.hashpw(newPasswd, BCrypt.gensalt());
-		
+
 		// 세션에서 가져온id랑 사용자가 비밀번호 변경 페이지에서 입력한newPasswd를 modifyPasswd넣어줌
 		memberService.modifyPasswd(id, hashPasswd);
-		
+
 		// 4. 비밀번호 완료 메세지 띄우고 로그아웃처리
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "text/html; charset=UTF-8");
-		//비밀번호를 변경하고 로그아웃 시키는 곳으로 이동
+		// 비밀번호를 변경하고 로그아웃 시키는 곳으로 이동
 		// -> 그러면 세션도 삭제하고 쿠키 수명도 없애고 난 이후에 메인페이지인 index로 이동
 		String str = JScript.href("비밀번호 변경 완료", "/member/logout");
 
 		return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 	}
-	
+
 	// 회원 탈퇴 페이지
 	@GetMapping("/remove")
 	public String removeForm() {
-		
+
 		return "member/memberRemove";
 	}
-	
+
 	@PostMapping("/remove")
 	public ResponseEntity<String> removrForm(String passwd, HttpSession session) {
-		//1. 비밀번호 체크
+		// 1. 비밀번호 체크
 		String id = (String) session.getAttribute("id");
 		MemberVO dbMemberVO = memberService.getMemberById(id);
-		
+
 		boolean isPasswdRight = BCrypt.checkpw(passwd, dbMemberVO.getPasswd());
-		
-		if (isPasswdRight == false) { //현재 비밀번호가 맞지 않음
+
+		if (isPasswdRight == false) { // 현재 비밀번호가 맞지 않음
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "text/html; charset=UTF-8");
 			String str = JScript.back("비밀번호가 틀렸습니다.");
 
 			return new ResponseEntity<String>(str, headers, HttpStatus.OK);
 		}
-		//2. DB에서 해당 아이디 정보 삭제
+		// 2. DB에서 해당 아이디 정보 삭제
 		memberService.deleteMemberById(id);
-		
-		//3. 로그아웃 처리(세션, 쿠키 삭제)
+
+		// 3. 로그아웃 처리(세션, 쿠키 삭제)
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "text/html; charset=UTF-8");
-		//비밀번호를 변경하고 로그아웃 시키는 곳으로 이동
+		// 비밀번호를 변경하고 로그아웃 시키는 곳으로 이동
 		// -> 그러면 세션도 삭제하고 쿠키 수명도 없애고 난 이후에 메인페이지인 index로 이동
 		String str = JScript.href("회원탈퇴 완료", "/member/logout");
 
