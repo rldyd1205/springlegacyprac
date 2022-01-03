@@ -20,6 +20,8 @@ public class loginCheckInterceptor implements HandlerInterceptor {
 		this.memberService = memberService;
 	}
 
+	// 사용자에게 요청받을걸 컨트롤러에 가기전에 막는데 그걸 이름을 preHandler라고 해서 
+	// 메서드 이름을 preHandle이라고 정함
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws IOException {
