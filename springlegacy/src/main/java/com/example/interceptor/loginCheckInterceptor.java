@@ -11,6 +11,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import com.example.domain.MemberVO;
 import com.example.service.MemberService;
 
+// 로그인 체크 -> 로그인이 필요한 서비스에서 로그인 안하고 접근했을 경우를 대비
 public class loginCheckInterceptor implements HandlerInterceptor {
 
 	private MemberService memberService;
