@@ -10,7 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 // 로그인 유지
 public class RememberMeInterceptor implements HandlerInterceptor {
-
+	
+	// alt + shift + s -> override
 	// 세션이 없을 때 쿠키를 뒤져봐서 있으면 그걸로 로그인
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
@@ -25,7 +26,7 @@ public class RememberMeInterceptor implements HandlerInterceptor {
 
 			if (cookies == null) {
 				for (Cookie cookie : cookies) {
-					if (cookie.getName().equals("UserId")) {
+					if (cookie.getName().equals("userId")) {
 						id = cookie.getValue();
 
 						session.setAttribute("id", id);

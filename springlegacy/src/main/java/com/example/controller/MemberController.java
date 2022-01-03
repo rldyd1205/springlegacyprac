@@ -158,7 +158,7 @@ public class MemberController {
 			// 반복문 forech사용(쿠키 하나씩 꺼내서 조건문을 통해 체크해봄)
 			for (Cookie cookie : cookies) {
 				// 쿠키 이름이 UserId(쿠키 봉다리)인 것만 꺼낼거임
-				if (cookie.getName().equals("UserId")) {
+				if (cookie.getName().equals("userId")) {
 					// 쿠키 수명 0으로 만들기
 					cookie.setMaxAge(0);
 					// 쿠키 경로 설정 "/" 모든경로로
