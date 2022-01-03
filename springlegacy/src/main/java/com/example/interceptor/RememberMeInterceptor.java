@@ -25,9 +25,9 @@ public class RememberMeInterceptor implements HandlerInterceptor{
 						
 						session.setAttribute("id", id);
 					}
-				}
-			}
-		}
+				}// for
+			} 
+		}// if
 		
 		return true;
 	}
