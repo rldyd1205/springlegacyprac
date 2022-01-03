@@ -47,9 +47,9 @@
 						</div>
 						<!-- passwd 2 input-->
 						<div class="form-floating mb-3">
-							<input class="form-control" id="passwdconfirm" type="password"
-								name="passwdconfirm" data-sb-validations="required,email" /> <label
-								for="passwdconfirm">비밀번호 확인</label>
+							<input class="form-control" id="passwdConfirm" type="password"
+								name="passwdConfirm" data-sb-validations="required,email" /> <label
+								for="passwdConfirm">비밀번호 확인</label>
 						</div>
 						<!-- name input-->
 						<div class="form-floating mb-3">
