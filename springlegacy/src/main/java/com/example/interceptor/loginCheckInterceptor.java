@@ -30,10 +30,10 @@ public class loginCheckInterceptor implements HandlerInterceptor {
 		if (id == null) {
 			response.sendRedirect("/member/login");
 
-			return false;
+			return false; // 예정이었던 컨트롤러는 호출 하지 말아야함. false
 		}
 
-		memberService.getMemberById(id);
+		MemberVO memberVO = memberService.getMemberById(id);
 		System.out.println(memberVO.toString());
 
 		return true;
