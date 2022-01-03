@@ -10,23 +10,23 @@ import org.springframework.web.servlet.ModelAndView;
 
 // 로그인 유지
 public class RememberMeInterceptor implements HandlerInterceptor {
-	
-	// alt + shift + s -> override
-	// 세션이 없을 때 쿠키를 뒤져봐서 있으면 그걸로 로그인
-	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 
-		// 세션이 있는지 확인
+	// alt + shift + s -> override
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		// 컨트롤러 메소드가 실행되기 전 호출됨.
+
 		HttpSession session = request.getSession();
+
 		String id = (String) session.getAttribute("id");
 
-		// 세션 없으면 쿠키확인
 		if (id == null) {
 			Cookie[] cookies = request.getCookies();
 
-			if (cookies == null) {
+			if (cookies != null) {
 				for (Cookie cookie : cookies) {
-					if (cookie.getName().equals("UserId")) {
+					if (cookie.getName().equals("userId")) {
 						id = cookie.getValue();
 
 						session.setAttribute("id", id);
@@ -52,5 +52,4 @@ public class RememberMeInterceptor implements HandlerInterceptor {
 		// view렌더링 후 호출됨
 	}
 
-	
 }
