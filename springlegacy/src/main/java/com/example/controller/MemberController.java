@@ -69,7 +69,7 @@ public class MemberController {
 		// 로그인상태유지
 		if (rememberMe == true) { // true상태일때 로그인 유지 체크 함
 			// 쿠키 등록하기
-			Cookie cookie = new Cookie("userId", id); // 쿠키생성
+			Cookie cookie = new Cookie("UserId", id); // 쿠키생성
 			// 쿠키수명 설정 초 * 분 * 시 * 일
 			cookie.setMaxAge(60 * 60 * 24 * 7);
 			// 쿠키 적용 경로 설정 여기서 "/"는 webapp이다 즉 모든 경로이다
