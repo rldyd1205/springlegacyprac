@@ -21,7 +21,7 @@ public class loginCheckInterceptor implements HandlerInterceptor {
 		this.memberService = memberService;
 	}
 
-	// 사용자에게 요청받을걸 컨트롤러에 가기전에 막는데 그걸 이름을 preHandler라고 해서 
+	// 사용자에게 요청받을걸 컨트롤러에 가기전에 막는데 그걸 이름을 preHandler라고 해서
 	// 메서드 이름을 preHandle이라고 정함
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -32,14 +32,18 @@ public class loginCheckInterceptor implements HandlerInterceptor {
 
 		// 세션에 아이디가 없을때
 		if (id == null) {
-			response.sendRedirect("/member/login");
+
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=UTF-8");
+
+			response.getWriter().print("<script>alert('로그인이 필요한 서비스입니다'); location.href = '/member/login';</script>");
 
 			return false; // 예정이었던 컨트롤러는 호출 하지 말아야함. false
 		}
 
 		MemberVO memberVO = memberService.getMemberById(id);
 		System.out.println(memberVO.toString());
-		
+
 		// 있으면 사용자가 요청한 곳으로 바로 이동
 		return true;
 	}
