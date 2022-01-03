@@ -29,6 +29,7 @@ public class loginCheckInterceptor implements HandlerInterceptor {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 
+		// 세션에 아이디가 없을때
 		if (id == null) {
 			response.sendRedirect("/member/login");
 
@@ -37,7 +38,8 @@ public class loginCheckInterceptor implements HandlerInterceptor {
 
 		MemberVO memberVO = memberService.getMemberById(id);
 		System.out.println(memberVO.toString());
-
+		
+		// 있으면 사용자가 요청한 곳으로 바로 이동
 		return true;
 	}
 }
