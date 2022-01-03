@@ -22,6 +22,8 @@ public class RememberMeInterceptor implements HandlerInterceptor{
 				for (Cookie cookie : cookies) {
 					if (cookie.getName().equals("UserId")) {
 						id = cookie.getValue();
+						
+						session.setAttribute("id", id);
 					}
 				}
 			}
