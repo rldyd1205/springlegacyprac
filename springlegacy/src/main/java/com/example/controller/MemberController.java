@@ -111,7 +111,7 @@ public class MemberController {
 		// 2. 비밀번호 맞는지 체크
 		String passwd = memberVO.getPasswd();
 
-		if (passwd.equals(passwdCornfirm)) {
+		if (passwd.equals(passwdCornfirm) == false) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.add("Content-Type", "text/html; charset=UTF-8");
 			String str = JScript.back("비밀번호가 틀렸습니다.");
