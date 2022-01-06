@@ -5,7 +5,35 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-12-30T10:25:00Z</updated>
+  <updated>2022-01-04T11:00:00Z</updated>
+  <entry>
+    <title>This Week in Spring (11 year anniversary edition!) - January 4th, 2022</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/01/04/this-week-in-spring-11-year-anniversary-edition-january-4th-2022" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2022-01-04:4661</id>
+    <updated>2022-01-04T11:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;, the first in the new year! (Happy new year!) This week also marks the 11th anniversary of &lt;em&gt;This Week in Spring&lt;/em&gt;, which I started writing on the first Tuesday of January 2011 thanks to a great idea from SpringSource co-founder and all-around good-guy &lt;a href="https://twitter.com/kdonald"&gt;Keith Donald (@kdonald)&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;What a run! As always, I just wanna extend a heartfelt thanks to all of you who read (_suffer!_) my rambling writing every week. We&amp;rsquo;ve been lucky, as a community, to have presided over the most amazing and uplifting period in Spring and the JVM&amp;rsquo;s history&amp;hellip; This roundup has reflected that with incredible stuff happening &lt;em&gt;all the time&lt;/em&gt;. Where there&amp;rsquo;s smoke, there&amp;rsquo;s fire. The many blogs, articles, podcasts, YouTube (and ever so occasionally Vimeo) videos, etc., are interesting in themselves, but they also signal interesting developments in the ecosystem, which is even more interesting! Rock on, community! &lt;/p&gt;
+&lt;p&gt;You know, even the number, the numeral itself - 11 - changes things. In English prose, it&amp;rsquo;s customary to spell out numbers that are less than 10. So, &amp;ldquo;one,&amp;rdquo; &amp;ldquo;two,&amp;rdquo; etc. Some style guides include &amp;ldquo;ten,&amp;rdquo; too. But 11, well, I can just &lt;em&gt;write&lt;/em&gt; 11. Who&amp;rsquo;s gonna stop me? The &lt;em&gt;New York Times Style Guide&lt;/em&gt;? Too late, I already checked it!! That&amp;rsquo;s one less grammar grievance, one less &lt;em&gt;style snafu&lt;/em&gt;, if you will, to be found in this blog! You ever pop a zit, pay off a credit (or technical) debt, or clean your house and just felt this overwhelming satisfaction? Like Marie Kondo says, you gotta throw it out if it does not &lt;em&gt;spark joy&lt;/em&gt;. And having to wrangle with the numerals for the number of years of this blog? Well, it definitely did &lt;strong&gt;not&lt;/strong&gt; spark joy.&lt;/p&gt;
+&lt;p&gt;But &lt;em&gt;you&lt;/em&gt; spark joy, my friends. &lt;em&gt;Thank you&lt;/em&gt; again for making this work so valuable. Without community, there&amp;rsquo;s no point in a community roundup, is there? &lt;em&gt;You&lt;/em&gt; are the reason for the season (Spring)! So, as always, I&amp;rsquo;m happy to hear about the latest-and-greatest that you feel worthy of inclusion: hit me up anytime (&lt;a href="https://twitter.com/starbuxman"&gt;@starbuxman&lt;/a&gt;) or &lt;a href="mailto:josh@joshlong.com"&gt;&lt;a href="mailto:&amp;#106;&amp;#111;&amp;#115;&amp;#x68;&amp;#64;j&amp;#x6f;&amp;#115;&amp;#104;&amp;#x6c;&amp;#111;&amp;#x6e;&amp;#103;&amp;#46;&amp;#99;&amp;#x6f;&amp;#x6d;"&gt;&amp;#106;&amp;#111;&amp;#115;&amp;#x68;&amp;#64;j&amp;#x6f;&amp;#115;&amp;#104;&amp;#x6c;&amp;#111;&amp;#x6e;&amp;#103;&amp;#46;&amp;#99;&amp;#x6f;&amp;#x6d;&lt;/a&gt;&lt;/a&gt;! &lt;/p&gt;
+&lt;p&gt;And now, without further ado, let&amp;rsquo;s get to this week&amp;rsquo;s roundup! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I love this! MyBatis Spring committer Kazuki Shimizu has created &lt;a href="https://github.com/kazuki43zoo/mybatis-spring-native"&gt;a prototypical Spring Native integration for MyBatis here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;In last week&amp;rsquo;s installment of &lt;em&gt;A Bootiful Podcast&lt;/em&gt;, &lt;a href="https://spring.io/blog/2021/12/30/a-bootiful-podcast-geertjan-wielenga-senior-director-of-opensource-projects-at-azul-systems-and-foojay-io-founder"&gt;I talked to Geertjan Wielenga, senior director of opensource projects at Azul Systems and Foojay.io founder&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://thecodeshewrites.wordpress.com/2021/11/26/deploying-a-java-spring-boot-angular-application-in-the-cloud-comparison-of-the-providers/"&gt;Deploying a Java-Spring Boot-Angular application in the Cloud: comparison of the providers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Want to use GraalVM on Github Actions? There&amp;rsquo;s &lt;em&gt;Action&lt;/em&gt; for that! &lt;a href="https://github.com/marketplace/actions/github-action-for-graalvm"&gt;GitHub Action for GraalVM - GitHub Marketplace&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2021/12/29/go-go-graalvm-with-spring-native-my-adventures-in-native-image-ville"&gt;Go, Go, GraalVM with Spring Native: My Adventures in Native Image-ville&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://blog.jooq.org/how-to-customise-a-jooq-configuration-that-is-injected-using-spring-boot/"&gt;How to customise a jOOQ Configuration that is injected using Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://vladmihalcea.com/keyset-pagination-spring/"&gt;Keyset Pagination with Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://vladmihalcea.com/custom-spring-data-repository/"&gt;The best way to write a custom Spring Data Repository&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://piotrminkowski.com/2021/12/30/vault-on-kubernetes-with-spring-cloud/"&gt;Vault on Kubernetes with Spring Cloud - Piotr&amp;rsquo;s TechBlog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://www.infoq.com/news/2021/12/minecrafts-jdk16-migration/?utm_campaign=infoq_content&amp;utm_source=twitter&amp;utm_medium=feed&amp;utm_term=java"&gt;End Of Year Learnings From Minecraft¡¯s Migration To JDK 16 And Q&amp;amp;A with the Mojang Team &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Geertjan Wielenga, senior director of opensource projects at Azul Systems and Foojay.io founder</title>
     <link rel="alternate" href="https://spring.io/blog/2021/12/30/a-bootiful-podcast-geertjan-wielenga-senior-director-of-opensource-projects-at-azul-systems-and-foojay-io-founder" />
@@ -2862,23 +2890,6 @@ dependencies {&#xD;
   &lt;li&gt;&lt;a href="https://twitter.com/VMware/status/1468962596879417355"&gt; This is a great, video overview of VMware¡¯s free, open-source Kubernetes distro, the Tanzu Community Edition. &lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;A nice report on the Microsoft Tech Community: &lt;a href="https://techcommunity.microsoft.com/t5/apps-on-azure-blog/2021-report-how-developers-migrate-spring-apps-to-the-cloud/ba-p/3021421"&gt;How developers migrate Spring apps to the cloud&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Square 0.4.0-RC1 is available</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/12/14/spring-cloud-square-0-4-0-rc1-is-available" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Olga Maciaszek-Sharma</name>
-    </author>
-    <id>tag:spring.io,2021-12-14:4640</id>
-    <updated>2021-12-14T18:24:22Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the community, I am pleased to announce that the Release Candidate 1 (RC1) of the &lt;a href="https://cloud.spring.io"&gt;Spring Cloud Square&lt;/a&gt; 0.4.0 is available today. The release can be found in &lt;a href="https://repo.spring.io/milestone/"&gt;Spring Milestone&lt;/a&gt; repository. You can check out the 0.4.0-RC1 &lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square/releases/tag/v0.4.0-RC1"&gt;release notes for more information&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This is primarily a bugfix release. See all issues included in this release &lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square/milestone/2?closed=1"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#notable-changes-in-rc1" class="anchor" name="notable-changes-in-rc1"&gt;&lt;/a&gt;Notable changes in RC1:&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Cloud Sleuth integration for OkHttpClient &lt;a href="https://github.com/spring-projects-experimental/spring-cloud-square/issues/36"&gt;#36&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The documentation for this milestone can be found &lt;a href="https://spring-projects-experimental.github.io/spring-cloud-square/docs/current/reference/html/index.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
