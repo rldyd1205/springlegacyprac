@@ -77,7 +77,6 @@
 	<script src="/resources/js/jquery-3.6.0.min.js"></script>
 	<script>
 	
-	
 	// 초기 첨부파일 개수
 	var fileCount = 1;
 	
@@ -108,8 +107,6 @@
 		// this에 제일 가까운 조상 div를 삭제시킴
 		fileCount--;
 	})
-	
-	
 		
 	</script>
 </body>
