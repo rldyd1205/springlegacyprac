@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.nio.file.Files;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.domain.AttachVO;
 import com.example.domain.BoardVO;
 import com.example.domain.Criteria;
 import com.example.domain.PageDTO;
@@ -67,7 +69,7 @@ public class BoardController {
 		int nextNum = boardService.getNextNum();
 		System.out.println("nextNum : " + nextNum);
 		boardVO.setNum(nextNum);
-
+		
 		// 2. 글쓴이 추가
 		String id = (String) session.getAttribute("id");
 		boardVO.setMemberId(id);
