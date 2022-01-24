@@ -1,6 +1,7 @@
 package com.example.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -15,4 +16,6 @@ public class BoardVO {
 	private int 	reRef;		// 답글 쓸 때 필요함(참조)
 	private int 	reLev;		// 답글 쓸 때 필요함
 	private int 	reSeq;		// 답글 쓸 때 필요함
+	
+	private List<AttachVO> attachlist;
 }

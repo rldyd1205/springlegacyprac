@@ -178,7 +178,10 @@ public class BoardController {
 		boardVO.setReLev(0);
 		boardVO.setReSeq(0);
 
+		boardVO.setAttachlist(attachList);
+		
 		System.out.println("수정 후 BoardVO : " + boardVO);
+		
 
 		// DB에 등록하기
 		boardService.writeBoard(boardVO);
