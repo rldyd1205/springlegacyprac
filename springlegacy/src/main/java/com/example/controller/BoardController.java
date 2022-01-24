@@ -181,11 +181,13 @@ public class BoardController {
 		boardVO.setAttachlist(attachList);
 		
 		System.out.println("수정 후 BoardVO : " + boardVO);
-		
 
 		// DB에 등록하기
-		boardService.writeBoard(boardVO);
+		//boardService.writeBoard(boardVO);
 
+		// DB에 게시글, 첨부파일 등록하기 
+		boardService.addBoardAndAddAttaches(boardVO);
+		
 		// 글 번호로 다음 페이지 다음 요청으로 이동
 		// 리다이렉트로 글 번호 전달하기
 		rttr.addAttribute("num", boardVO.getNum());
