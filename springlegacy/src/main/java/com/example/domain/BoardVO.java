@@ -17,5 +17,5 @@ public class BoardVO {
 	private int 	reLev;		// 답글 쓸 때 필요함
 	private int 	reSeq;		// 답글 쓸 때 필요함
 	
-	private List<AttachVO> attachlist;
+	private List<AttachVO> attachList;
 }

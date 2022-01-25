@@ -60,8 +60,10 @@ public class BoardService {
 		// 게시글 DB등록
 		boardMapper.writeBoard(boardVO);
 		// 첨부파일 DB등록
-		attachMapper.addAttaches(boardVO.getAttachlist());
+		attachMapper.addAttaches(boardVO.getAttachList());
 	}
 	
-	
+	public BoardVO getBoardAndAttaches(int num) {
+		return boardMapper.getBoardAndAttaches(num);
+	}
 }

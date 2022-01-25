@@ -19,6 +19,9 @@ public interface BoardMapper {
 	
 	int getCountBoardsByCri(Criteria cri);
 	
+	// join 쿼리로 게시글, 첨부파일 가져오기
+	BoardVO getBoardAndAttaches(int num);
+	
 	// =========== insert ===========
 	void writeBoard(BoardVO boardVO);
 	

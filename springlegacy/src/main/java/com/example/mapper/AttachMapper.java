@@ -7,8 +7,8 @@ import com.example.domain.AttachVO;
 public interface AttachMapper {
 	
 	// =========== select ===========
-		
-		
+
+	
 	// =========== insert ===========
 	void addAttaches(List<AttachVO> attachlist);	
 		

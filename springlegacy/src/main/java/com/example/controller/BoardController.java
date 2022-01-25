@@ -178,7 +178,7 @@ public class BoardController {
 		boardVO.setReLev(0);
 		boardVO.setReSeq(0);
 
-		boardVO.setAttachlist(attachList);
+		boardVO.setAttachList(attachList);
 		
 		System.out.println("수정 후 BoardVO : " + boardVO);
 
@@ -202,7 +202,7 @@ public class BoardController {
 
 	// 게시글 상세보기페이지 가져오기
 	@GetMapping("/content")
-	public String boardContent(int num,
+	public String boardContent(int num, Criteria cri,
 			// pageNum은 필수로 요구되는 사항이 아니고, 까먹고 pageNum을 안보내줬으면
 			// 기본값 1로 설정해서 보내준다
 			@RequestParam(required = false, defaultValue = "1") String pageNum, Model model) {
@@ -216,14 +216,18 @@ public class BoardController {
 		// 조회수 증가하는게 밑에 있으면 DB에서는 조회수 카운트가 올라가는데
 		// 화면에서는 조회수가 증가하지 않음
 		boardService.addViewCount(num);
-
+		
 		// num에 해당하는 글 정보 DB에서 가져오기
-		BoardVO boardVO = boardService.getBoardByNum(num);
-		System.out.println("boardVO : " + boardVO);
+		//BoardVO boardVO = boardService.getBoardByNum(num);
 
+		// num에 해당하는 글 + 첨부파일 DB에서 가져오기
+		BoardVO boardVO = boardService.getBoardAndAttaches(num);
+		System.out.println("BoardVO : " + boardVO);
+		
 		model.addAttribute("board", boardVO);
 		model.addAttribute("pageNum", pageNum);
-
+		model.addAttribute("cri", cri);
+		
 		return "board/boardContent";
 	}
 }

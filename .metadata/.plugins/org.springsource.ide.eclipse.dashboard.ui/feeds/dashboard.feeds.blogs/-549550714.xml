@@ -5,7 +5,22 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-01-20T23:00:00Z</updated>
+  <updated>2022-01-24T14:47:29Z</updated>
+  <entry>
+    <title>Spring Initializr 0.12.0 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/01/24/spring-initializr-0-12-0-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>St?phane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2022-01-24:4682</id>
+    <updated>2022-01-24T14:47:29Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I¡¯m happy to announce that Spring Initializr 0.12.0 has been released and is now available from Maven Central.&lt;/p&gt;
+&lt;p&gt;This release includes &lt;a href="https://github.com/spring-io/initializr/releases/tag/v0.12.0"&gt;10 fixes, improvements and dependency upgrades&lt;/a&gt;.&lt;br/&gt;Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
+&lt;p&gt;For full &lt;a href="https://github.com/spring-io/initializr/wiki/Spring-Initializr-0.12-Release-Notes#upgrading-from-initializr-011"&gt;upgrade instructions&lt;/a&gt; and &lt;a href="https://github.com/spring-io/initializr/wiki/Spring-Initializr-0.12-Release-Notes#new-and-noteworthy"&gt;new and noteworthy&lt;/a&gt; features please see the &lt;a href="https://github.com/spring-io/initializr/wiki/Spring-Initializr-0.12-Release-Notes"&gt;release notes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-io/initializr"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/initializr/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/initializr/docs/0.12.0/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-initializr"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-io/initializr"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 3.0.0-M1 is now available</title>
     <link rel="alternate" href="https://spring.io/blog/2022/01/20/spring-boot-3-0-0-m1-is-now-available" />
@@ -583,10 +598,10 @@ There are many levels on which you may choose to implement the desired behavior.
       <name>Andy Wilkinson</name>
     </author>
     <id>tag:spring.io,2022-01-17:4670</id>
-    <updated>2022-01-17T13:39:47Z</updated>
+    <updated>2022-01-17T13:39:00Z</updated>
     <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I&amp;rsquo;m happy to announce that Spring REST Docs &lt;code&gt;2.0.6.RELEASE&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
 &lt;p&gt;This release includes &lt;a href="https://github.com/spring-projects/spring-restdocs/releases/tag/v2.0.6.RELEASE"&gt;18 bug fixes and documentation improvements&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-restdocs/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-restdocs"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-restdocs/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-restdocs/docs/2.0.6.RELEASE/reference/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-restdocs"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-restdocs"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-restdocs/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-restdocs"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-restdocs/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-restdocs/docs/2.0.6.RELEASE/reference/html5"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-restdocs"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-restdocs"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
   <entry>
@@ -747,80 +762,6 @@ There are many levels on which you may choose to implement the desired behavior.
     <updated>2022-01-06T18:00:00Z</updated>
     <content type="html">&lt;p&gt;Hi, Spring fans, and happy new year! In this installment, &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Spring Cloud co-founder, legend, and the all-around nice guy &lt;a href="https://twitter.com/spencerbgibb"&gt;Spencer Gibb (@spencerbgibb)&lt;/a&gt;.&lt;/p&gt;
 &lt;iframe title="Spring Cloud cofounder Spencer Gibb (and happy new year!)" allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=4f3rq-1171913-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;btn-skin=7"&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Introducing Spring Integration Groovy DSL</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/01/06/introducing-spring-integration-groovy-dsl" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Artem Bilan</name>
-    </author>
-    <id>tag:spring.io,2022-01-06:4663</id>
-    <updated>2022-01-06T17:47:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Happy New Year, Spring community!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Hope you had great holidays and ready for new excitements in front of us.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;After the rest and recharging during Christmas break I decided to pay honor to my favorite language back in days - Groovy.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;And now it&amp;#8217;s my pleasure to present you a brand new Groovy DSL for Spring Integration.
-You perhaps heard about our &lt;a href="https://spring.io/blog/2012/11/06/a-groovy-dsl-for-spring-integration"&gt;old attempt&lt;/a&gt; to make a Groovy DSL on top of Spring Integration XML support.
-But the solution was pretty cumbersome (especially for protocol-specific channel adapters) and support burden has grown tremendously.
-This my latest implementation is fully based on already mature Java DSL and its builder pattern support.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Having 10 years experience with Gradle I thought that it is going be easy enough for me to prepare quickly something what just extends an &lt;code&gt;IntegrationFlowDefinition&lt;/code&gt; and exposes a Groovy builder style for definition.
-Turns out just using a language and engineering a DSL on top of it are different tasks, and I had to start learning respective Groovy aspects from a scratch.
-A &lt;a href="https://musketyr.medium.com/groovy-dsl-builders-1-the-concept-2d5a97fa0a51"&gt;series of blog posts&lt;/a&gt; by Vladim?r Oran? gave me a good source of information what and how should be used and done to make end-user experience with Groovy DSL as best as possible.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Including the current success of existing &lt;a href="https://docs.spring.io/spring-integration/docs/current/reference/html/kotlin-dsl.html#kotlin-dsl"&gt;Kotlin DSL for Spring Integration&lt;/a&gt;, so far I ended up with a couple Groovy classes.
-The &lt;code&gt;IntegrationGroovyDsl&lt;/code&gt; as a factory for &lt;code&gt;static integrationFlow()&lt;/code&gt; methods to be imported to the target project and delegation to the well-knows &lt;code&gt;IntegrationFlows.from()&lt;/code&gt; factories.
-And the &lt;code&gt;GroovyIntegrationFlowDefinition&lt;/code&gt; as a wrapper around &lt;code&gt;IntegrationFlowDefinition&lt;/code&gt; delegate.
-Both classes heavily leverage a Groovy first class citizen - &lt;code&gt;groovy.lang.Closure&lt;/code&gt;, with a &lt;code&gt;@DelegatesTo&lt;/code&gt; and &lt;code&gt;@ClosureParams&lt;/code&gt; features to support IDE suggestions and auto-completion.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;So, all you need is to have a &lt;code&gt;org.springframework.integration:spring-integration-groovy-dsl:0.0.1&lt;/code&gt; dependency, add an &lt;code&gt;import static org.springframework.integration.dsl.IntegrationGroovyDsl.integrationFlow&lt;/code&gt; and start typing your &lt;code&gt;IntegrationFlow&lt;/code&gt; bean in a nice Groovy style.
-And this is how it looks so far in my IntelliJ IDEA:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="imageblock"&gt;
-&lt;div class="content"&gt;
-&lt;img src="https://raw.githubusercontent.com/spring-projects/spring-integration-extensions/main/samples/Groovy_DSL_in_IDEA.PNG" alt="Groovy DSL in IDEA"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="admonitionblock note"&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class="icon"&gt;
-&lt;div class="title"&gt;Note&lt;/div&gt;
-&lt;/td&gt;
-&lt;td class="content"&gt;
-After learning those &lt;code&gt;@DelegatesTo&lt;/code&gt; and &lt;code&gt;@ClosureParams&lt;/code&gt;, I realized that Kotlin also provides a nice feature for better IDE experience.
-So, the next Spring Integration &lt;code&gt;5.5.8&lt;/code&gt; version (due to in the middle of January) also includes an &lt;code&gt;@IntegrationDsl&lt;/code&gt; marker annotation.
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can find more samples in the project &lt;a href="https://github.com/spring-projects/spring-integration-extensions/tree/main/spring-integration-groovy-dsl"&gt;README&lt;/a&gt; and respective &lt;a href="https://github.com/spring-projects/spring-integration-extensions/blob/main/spring-integration-groovy-dsl/src/test/groovy/org/springframework/integration/dsl/test/GroovyDslTests.groovy"&gt;Spock tests&lt;/a&gt;.
-If project matures, eventually it may go directly to &lt;code&gt;spring-integration-core&lt;/code&gt;.
-We also may override those &lt;code&gt;IntegrationGroovyDsl&lt;/code&gt; and &lt;code&gt;GroovyIntegrationFlowDefinition&lt;/code&gt; Groovy classes to Java (it&amp;#8217;s just a DSL API anyway!), however I believe the &lt;code&gt;@CompileStatic&lt;/code&gt; Groovy feature should be enough to optimize compiled byte code in the end.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Give it a try and any feedback is welcome!&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Cheers,&amp;#160;&lt;br&gt;
-Artem&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration-extensions"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration-extensions/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/main/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
