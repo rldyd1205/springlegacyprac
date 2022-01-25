@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
 	margin-top: 30px;
 }
 
-.rows{
+.rows {
 	border-bottom: black solid 1px;
 }
 
@@ -27,11 +28,12 @@
 	font-size: 30px;
 }
 
-#row3{
+#row3 {
 	padding: 20px;
 	font-size: 25px;
 	height: 450px;
 }
+
 #regDate {
 	font-size: 20px;
 }
@@ -56,20 +58,21 @@
 				</div>
 				<div class="divider-custom-line"></div>
 			</div>
-			<div >
+			<div>
 				<button type="button" class="btn btn-primary"
-				onclick="location.href='/board/list?pageNum=${ pageNum }'">게시글 목록으로 돌아가기</button>
+					onclick="location.href='/board/list?pageNum=${ pageNum }'">게시글
+					목록으로 돌아가기</button>
 			</div>
-			
+
 			<!-- Contact Section Form-->
 			<div class="row justify-content-center" id="content-box">
 				<div class="row rows" id="row1">
 					<div id="boardNum" class="col-lg-9">
-						<span>${ board.num }</span>&nbsp;&nbsp;&nbsp;
-						<span>${ board.subject }</span>
+						<span>${ board.num }</span>&nbsp;&nbsp;&nbsp; <span>${ board.subject }</span>
 					</div>
 					<div id="regDate" class="col-lg-3">
-						<span>등록날짜 <fmt:formatDate value="${ board.regDate }" pattern="yyyy.MM.dd HH:mm"/></span>
+						<span>등록날짜 <fmt:formatDate value="${ board.regDate }"
+								pattern="yyyy.MM.dd HH:mm" /></span>
 					</div>
 				</div>
 				<div class="row rows" id="row2">
@@ -79,9 +82,40 @@
 					<div id="viewCount" class="col-lg-2">
 						<span>조회수 ${ board.viewCount }</span>
 					</div>
-				</div>	
-				<div class="row rows" id="row3">
-					${ board.content }
+				</div>
+				<div class="row rows" id="row3">${ board.content }</div>
+				<div class="row rows">
+					<h3>첨부파일</h3>
+					<c:choose>
+						<c:when test="${ fn:length(board.attachList) gt 0 }">
+							<c:forEach var="attach" items="${ board.attachList }">
+
+								<c:if test="${ attach.filetype eq 'O' }">
+									<!-- 일반파일 -->
+									<!-- 다운로드할 일반파일 경로 변수 만들기 pageScope로 저장 -->
+									<c:set var="fileCallPath"
+										value="${ attach.uploadpath }/${ attach.uuid }_${ attach.filename }" />
+									<li><a href="/download?fileName=${ fileCallPath }"> 💾
+											${ attach.filename } </a></li>
+								</c:if>
+								<c:if test="${ attach.filetype eq 'I' }">
+									<!-- 이미지파일 -->
+									<c:set var="fileCallPath"
+										value="${ attach.uploadpath }/s_${ attach.uuid }_${ attach.filename }" />
+									<c:set var="fileCallPathOrigin"
+										value="${ attach.uploadpath }/${ attach.uuid }_${ attach.filename }" />
+									<li><a href="/download?fileName=${ fileCallPathOrigin }">
+											💾 ${ attach.filename }<img
+											src="/display?fileName=${ fileCallPath }"
+											style="width: 200px">
+									</a></li>
+								</c:if>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							첨부파일 없음
+						</c:otherwise>
+					</c:choose>
 				</div>
 			</div>
 		</div>
