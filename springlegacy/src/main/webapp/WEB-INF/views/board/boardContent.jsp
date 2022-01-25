@@ -84,7 +84,7 @@
 					</div>
 				</div>
 				<div class="row rows" id="row3">${ board.content }</div>
-				<div class="row rows">
+				<div class="row rows" style="display=flex">
 					<h3>첨부파일</h3>
 					<c:choose>
 						<c:when test="${ fn:length(board.attachList) gt 0 }">
@@ -95,8 +95,8 @@
 									<!-- 다운로드할 일반파일 경로 변수 만들기 pageScope로 저장 -->
 									<c:set var="fileCallPath"
 										value="${ attach.uploadpath }/${ attach.uuid }_${ attach.filename }" />
-									<li><a href="/download?fileName=${ fileCallPath }"> 💾
-											${ attach.filename } </a></li>
+									<div><a href="/download?fileName=${ fileCallPath }"> 💾
+											${ attach.filename } </a></div>
 								</c:if>
 								<c:if test="${ attach.filetype eq 'I' }">
 									<!-- 이미지파일 -->
@@ -104,11 +104,11 @@
 										value="${ attach.uploadpath }/s_${ attach.uuid }_${ attach.filename }" />
 									<c:set var="fileCallPathOrigin"
 										value="${ attach.uploadpath }/${ attach.uuid }_${ attach.filename }" />
-									<li><a href="/download?fileName=${ fileCallPathOrigin }">
+									<div><a href="/download?fileName=${ fileCallPathOrigin }">
 											💾 ${ attach.filename }<img
 											src="/display?fileName=${ fileCallPath }"
-											style="width: 200px">
-									</a></li>
+											style="width: 60px">
+									</a></div>
 								</c:if>
 							</c:forEach>
 						</c:when>
